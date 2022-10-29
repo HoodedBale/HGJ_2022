@@ -7,6 +7,9 @@ public class ResourceBehaviour : MonoBehaviour
     public GameStats.RESOURCE_TYPE resourceType = GameStats.RESOURCE_TYPE.CARDBOARD;
     public int count = 10;
 
+    public delegate void OnConsume();
+    public OnConsume onconsume;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,8 +32,16 @@ public class ResourceBehaviour : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Destroy(gameObject);
-            GameStats.resources[(int)resourceType] += count;
+            if(!GameStats.ResourceFull(count))
+            {
+                Destroy(gameObject);
+                GameStats.resources[(int)resourceType] += count;
+
+                if (onconsume != null)
+                {
+                    onconsume();
+                }
+            }
         }
     }
 }
