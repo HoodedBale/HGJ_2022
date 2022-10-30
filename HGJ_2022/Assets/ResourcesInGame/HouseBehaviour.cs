@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class HouseBehaviour : MonoBehaviour
 {
-    public List<GameObject> resourcePrefabs = new List<GameObject>();
+    //public List<GameObject> resourcePrefabs = new List<GameObject>();
+    public LootTableSO resourceLootTable;
     public float minTime, maxTime;
 
     float currentTime;
@@ -32,7 +33,7 @@ public class HouseBehaviour : MonoBehaviour
         }
         else if (currentTime <= 0)
         {
-            GameObject resource = Instantiate(resourcePrefabs[Random.Range(0, resourcePrefabs.Count)]);
+            GameObject resource = Instantiate(resourceLootTable.RollLoot());
             resource.transform.position = resourceTargetPosition.position;
             currentTime = Random.Range(minTime, maxTime);
             hasResource = true;

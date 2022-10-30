@@ -16,6 +16,7 @@ public class GameStats
     public static int resourceCapacity = 100;
     public static int health = 100, maxhealth = 100;
 
+    /*
     public static bool ResourceFull(int newResource = 0)
     {
         int totalres = newResource;
@@ -25,6 +26,12 @@ public class GameStats
         }
 
         return totalres > resourceCapacity;
+    }
+    */
+
+    public static bool ResourceFull(RESOURCE_TYPE resource, int toadd = 0)
+    {
+        return (resources[(int)resource] + toadd > resourceCapacity);
     }
 
     public static void Reset()

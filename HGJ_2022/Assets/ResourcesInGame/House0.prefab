@@ -111,10 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 997c7322698f1944fa0e8da2e48a2853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourcePrefabs:
-  - {fileID: 3801657229631625475, guid: 0a47a7371b7646045a4f0e2ceda638a1, type: 3}
-  - {fileID: 3016055997686515959, guid: 0a3731d5d3d190e4b87b95cb8b7c59f0, type: 3}
-  - {fileID: 8940265303539510407, guid: 081851ce175b7ca4a826871401ec21c1, type: 3}
+  resourceLootTable: {fileID: 11400000, guid: 67fea1d6e44b61042bdc018fd12a06c7, type: 2}
   minTime: 2
   maxTime: 5
   resourceTargetPosition: {fileID: 3997671123025579020}

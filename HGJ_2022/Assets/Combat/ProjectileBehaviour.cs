@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class ProjectileBehaviour : MonoBehaviour
 {
-    public Transform target;
+    public GameObject target;
     public float speed;
     public int damage;
     public float aoe;
+    public string targettag;
 
     HashSet<GameObject> withinrange = new HashSet<GameObject>();
 
@@ -20,14 +21,19 @@ public class ProjectileBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Homing();
+        if (target == null)
+            Destroy(gameObject);
+        else
+        {
+            Homing();
+        }
     }
 
     void Homing()
     {
-        if((transform.position - target.position).sqrMagnitude > 0.5f)
+        if((transform.position - target.transform.position).sqrMagnitude > 0.5f)
         {
-            Vector3 direction = target.position - transform.position;
+            Vector3 direction = target.transform.position - transform.position;
             direction.Normalize();
             GetComponent<Rigidbody>().velocity = direction * speed;
         }
@@ -47,6 +53,8 @@ public class ProjectileBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!other.CompareTag(targettag))
+            return;
         if(!withinrange.Contains(other.gameObject))
         {
             withinrange.Add(other.gameObject);
@@ -55,7 +63,9 @@ public class ProjectileBehaviour : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(withinrange.Contains(other.gameObject))
+        if (!other.CompareTag(targettag))
+            return;
+        if (withinrange.Contains(other.gameObject))
         {
             withinrange.Remove(other.gameObject);
         }
