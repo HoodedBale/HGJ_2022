@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class ResourceBehaviour : MonoBehaviour
 {
-    public GameStats.RESOURCE_TYPE resourceType = GameStats.RESOURCE_TYPE.CARDBOARD;
-    public int count = 10;
+    //public GameStats.RESOURCE_TYPE resourceType = GameStats.RESOURCE_TYPE.CARDBOARD;
+    //public int count = 10;
+
+    public int cardboardmin, cardboardmax, plasticmin, plasticmax, metalmin, metalmax;
+
+    public delegate void OnConsume();
+    public OnConsume onconsume;
+    int cardboard, plastic, metal;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        cardboard = Random.Range(cardboardmin, cardboardmax + 1);
+        plastic = Random.Range(plasticmin, plasticmax + 1);
+        metal = Random.Range(metalmin, metalmax + 1);
     }
 
     // Update is called once per frame
@@ -29,8 +37,22 @@ public class ResourceBehaviour : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            if(GameStats.ResourceFull(GameStats.RESOURCE_TYPE.CARDBOARD, cardboard) ||
+                GameStats.ResourceFull(GameStats.RESOURCE_TYPE.PLASTIC, plastic) ||
+                GameStats.ResourceFull(GameStats.RESOURCE_TYPE.METAL, metal))
+            {
+                return;
+            }
+
             Destroy(gameObject);
-            GameStats.resources[(int)resourceType] += count;
+            GameStats.resources[(int)GameStats.RESOURCE_TYPE.CARDBOARD] += cardboard;
+            GameStats.resources[(int)GameStats.RESOURCE_TYPE.PLASTIC] += plastic;
+            GameStats.resources[(int)GameStats.RESOURCE_TYPE.METAL] += metal;
+
+            if (onconsume != null)
+            {
+                onconsume();
+            }
         }
     }
 }

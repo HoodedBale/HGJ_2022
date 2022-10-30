@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class HouseBehaviour : MonoBehaviour
 {
-    public GameObject resourcePrefab;
+    //public List<GameObject> resourcePrefabs = new List<GameObject>();
+    public LootTableSO resourceLootTable;
     public float minTime, maxTime;
 
     float currentTime;
+    bool hasResource = false;
 
     public Transform resourceTargetPosition;
 
@@ -25,17 +27,20 @@ public class HouseBehaviour : MonoBehaviour
 
     void SpawnResource()
     {
-        if(currentTime > 0)
+        if(currentTime > 0 && !hasResource)
         {
             currentTime -= Time.deltaTime;
         }
-        else
+        else if (currentTime <= 0)
         {
-            GameObject resource = Instantiate(resourcePrefab);
-            resource.GetComponent<ResourceBehaviour>().resourceType = (GameStats.RESOURCE_TYPE)Random.Range(0, (int)GameStats.RESOURCE_TYPE.COUNT);
-            resource.GetComponent<ResourceBehaviour>().count = Random.Range(1, 6) * 10;
+            GameObject resource = Instantiate(resourceLootTable.RollLoot());
             resource.transform.position = resourceTargetPosition.position;
             currentTime = Random.Range(minTime, maxTime);
+            hasResource = true;
+            resource.GetComponent<ResourceBehaviour>().onconsume += () =>
+             {
+                 hasResource = false;
+             };
         }
     }
 }
