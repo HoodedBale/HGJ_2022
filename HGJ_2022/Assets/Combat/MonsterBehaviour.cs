@@ -15,6 +15,9 @@ public class MonsterBehaviour : MonoBehaviour
     public float movementspeed;
     public Transform targettransform;
     public float turntime = 0.1f;
+    public CombatBehaviour combatbehaviour;
+    public Transform combattarget;
+    public float engagerange = 5;
 
     float turndamper = 0;
 
@@ -30,6 +33,23 @@ public class MonsterBehaviour : MonoBehaviour
         if(currentstate == STATE.PATROLLING)
         {
             Patrolling();
+        }
+
+        if((transform.position - combattarget.position).sqrMagnitude <= engagerange * engagerange)
+        {
+            targettransform = combattarget;
+        }
+
+        if((transform.position - combattarget.position).sqrMagnitude <= combatbehaviour.attackrange * combatbehaviour.attackrange)
+        {
+            currentstate = STATE.ATTACKING;
+            combatbehaviour.gameObject.SetActive(true);
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+        }
+        else
+        {
+            combatbehaviour.gameObject.SetActive(false);
+            currentstate = STATE.PATROLLING;
         }
     }
 
