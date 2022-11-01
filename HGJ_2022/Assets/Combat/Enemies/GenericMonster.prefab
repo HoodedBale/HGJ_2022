@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1926022692740281060}
   - component: {fileID: 4871184539497147074}
   m_Layer: 0
-  m_Name: BasicMonster
+  m_Name: GenericMonster
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
