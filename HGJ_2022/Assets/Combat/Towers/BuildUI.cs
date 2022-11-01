@@ -45,6 +45,10 @@ public class BuildUI : MonoBehaviour
     {
         this.towerbase = towerbase;
         Vector3 promptpos = towerbase.transform.position + new Vector3(0, 2, 0);
+        if(Camera.main == null)
+        {
+            Debug.Log("help");
+        }
         buildPrompt.localPosition = Camera.main.WorldToScreenPoint(promptpos) - new Vector3(960, 540);
         buildPrompt.localScale = new Vector3(0, 0, 1);
         buildPrompt.gameObject.SetActive(true);
