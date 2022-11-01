@@ -117,21 +117,33 @@ MonoBehaviour:
     attackAnimDelay: 0
     range: 2
     targetcount: 1
+    cardboardCost: 0
+    plasticCost: 0
+    metalCost: 0
   - damage: 70
     attacksPerSec: 0.6
     attackAnimDelay: 0
     range: 2
-    targetcount: 0
+    targetcount: 1
+    cardboardCost: 8
+    plasticCost: 8
+    metalCost: 0
   - damage: 90
     attacksPerSec: 0.7
     attackAnimDelay: 0
     range: 2.5
-    targetcount: 0
+    targetcount: 1
+    cardboardCost: 0
+    plasticCost: 15
+    metalCost: 0
   - damage: 110
     attacksPerSec: 1
     attackAnimDelay: 0
     range: 3
-    targetcount: 0
+    targetcount: 1
+    cardboardCost: 20
+    plasticCost: 20
+    metalCost: 15
   attackrange: 0
   attackanimdelay: 0
   attackcooldown: 0
@@ -140,6 +152,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 6198406023034903816, guid: 2f237d39208147c439b0fff7b5034b04,
     type: 3}
   targetTag: Enemy
+  combatType: 1
 --- !u!1 &6630045987915075263
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,6 +262,7 @@ GameObject:
   - component: {fileID: 3290283475056714126}
   - component: {fileID: 8937744115370245763}
   - component: {fileID: 8979313475329366935}
+  - component: {fileID: 6978305245373542651}
   m_Layer: 0
   m_Name: MeleeTower
   m_TagString: Untagged
@@ -336,3 +350,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6978305245373542651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8856154515160644592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b17f78def431041858bcd8c5302835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatbehaviour: {fileID: 4742906821823089125}

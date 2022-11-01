@@ -10,10 +10,21 @@ public class CombatStat
     public float attackAnimDelay;
     public float range;
     public int targetcount;
+
+    public int cardboardCost;
+    public int plasticCost;
+    public int metalCost;
 }
 
 public class CombatBehaviour : MonoBehaviour
 {
+    public enum CombatType
+    {
+        RANGE,
+        MELEE,
+        COUNT
+    }
+
     public int level = 0;
     public List<CombatStat> statTree = new List<CombatStat>();
 
@@ -24,6 +35,7 @@ public class CombatBehaviour : MonoBehaviour
     public int damage;
     public GameObject projectilePrefab;
     public string targetTag;
+    public CombatType combatType = CombatType.RANGE;
 
     float atktimer = 0;
     bool attackanimplayed = false;
@@ -57,13 +69,15 @@ public class CombatBehaviour : MonoBehaviour
             atktimer = 0;
 
             Queue<GameObject> removequeue = new Queue<GameObject>();
-            for(int i = 0; i < targetcount && i < targets.Count; ++i)
+            Debug.Log(string.Format("targets: {0}", targets.Count));
+            for(int i = 0; (i < targetcount || combatType == CombatType.MELEE) && i < targets.Count; ++i)
             {
                 if(targets[i] == null)
                 {
                     removequeue.Enqueue(targets[i]);
                     continue;
                 }
+
                 GameObject projectile = Instantiate(projectilePrefab);
                 projectile.transform.position = transform.position;
                 projectile.GetComponent<ProjectileBehaviour>().target = targets[i];

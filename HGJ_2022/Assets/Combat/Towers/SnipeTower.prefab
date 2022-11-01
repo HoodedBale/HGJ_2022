@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8704803989535529860}
   - component: {fileID: 377617371347261608}
   - component: {fileID: 8233780754821628897}
+  - component: {fileID: 8238718413703984786}
   m_Layer: 0
   m_Name: SnipeTower
   m_TagString: Untagged
@@ -99,6 +100,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8238718413703984786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7194082084755349825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b17f78def431041858bcd8c5302835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatbehaviour: {fileID: 3290457367889156410}
 --- !u!1 &8487803344326141779
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,21 +327,33 @@ MonoBehaviour:
     attackAnimDelay: 0
     range: 6
     targetcount: 1
+    cardboardCost: 0
+    plasticCost: 0
+    metalCost: 0
   - damage: 30
     attacksPerSec: 1.8
     attackAnimDelay: 0
     range: 8
     targetcount: 0
+    cardboardCost: 15
+    plasticCost: 0
+    metalCost: 0
   - damage: 40
     attacksPerSec: 2
     attackAnimDelay: 0
     range: 10
     targetcount: 0
+    cardboardCost: 18
+    plasticCost: 5
+    metalCost: 0
   - damage: 56
     attacksPerSec: 2.4
     attackAnimDelay: 0
     range: 12
     targetcount: 0
+    cardboardCost: 20
+    plasticCost: 20
+    metalCost: 10
   attackrange: 0
   attackanimdelay: 0
   attackcooldown: 0
