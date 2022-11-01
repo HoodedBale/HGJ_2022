@@ -8,16 +8,22 @@ public class MovementScript : MonoBehaviour
     public float turntime = 0.1f;
     float turndamper = 0;
 
+    public static MovementScript current;
+    public bool disablemovement = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        current = this;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Movement();
+        if (!disablemovement)
+            Movement();
+        else
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
     void Movement()
