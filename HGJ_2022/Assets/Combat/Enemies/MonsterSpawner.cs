@@ -13,7 +13,8 @@ public class MonsterSpawner : MonoBehaviour
 
     float waveTimer = 0;
 
-    public WaveSystemSO waveData;
+    int currentWave = 0;
+    public WaveSystemSO[] waveData;
 
     bool isWaiting = false;
 
@@ -44,7 +45,9 @@ public class MonsterSpawner : MonoBehaviour
         }
         else
         {
-            foreach (WaveSystemSO.SpawnEntry entry in waveData.spawnList)
+            ++currentWave;
+
+            foreach (WaveSystemSO.SpawnEntry entry in waveData[currentWave - 1].spawnList)
             {
                 for (int count = 0; count < entry.monsterCount; count++) //spawn monsters up to monster count in that entry
                 {
