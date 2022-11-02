@@ -18,9 +18,6 @@ public class MonsterBehaviour : MonoBehaviour
     public CombatBehaviour combatbehaviour;
     public Transform combattarget;
     public float engagerange = 5;
-
-    public float atkRate = 0.5f; //attacks per second
-    public float atkDamage = 1;
     
     float turndamper = 0;
 

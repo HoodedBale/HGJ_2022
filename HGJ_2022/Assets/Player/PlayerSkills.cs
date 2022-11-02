@@ -14,7 +14,7 @@ public class PlayerSkills : MonoBehaviour
 
     public List<DashStat> dashUpgrade;
     public int dashLevel;
-    float dashTimer;
+    float dashTimer = 0;
     bool dashing = false;
     HashSet<GameObject> dashedEnemies = new HashSet<GameObject>();
 
@@ -32,8 +32,8 @@ public class PlayerSkills : MonoBehaviour
 
     void Dash()
     {
-        dashTimer += Time.deltaTime;
-        if(dashTimer >= dashUpgrade[dashLevel].cooldown)
+        dashTimer -= Time.deltaTime;
+        if(dashTimer <= 0)
         {
             if(Input.GetKeyDown(KeyCode.Space))
             {
@@ -43,7 +43,7 @@ public class PlayerSkills : MonoBehaviour
                 //GetComponent<MovementScript>().movementspeed *= 2;
                 dashing = true;
                 StartCoroutine(DashTimer());
-                dashTimer = 0;
+                dashTimer = dashUpgrade[dashLevel].cooldown;
                 GetComponent<CapsuleCollider>().isTrigger = true;
             }
         }
@@ -51,7 +51,7 @@ public class PlayerSkills : MonoBehaviour
 
     IEnumerator DashTimer()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
         dashing = false;
         dashedEnemies.Clear();
         GetComponent<CapsuleCollider>().isTrigger = false;

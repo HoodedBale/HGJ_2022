@@ -334,7 +334,7 @@ MonoBehaviour:
     attacksPerSec: 1.8
     attackAnimDelay: 0
     range: 28
-    targetcount: 0
+    targetcount: 1
     cardboardCost: 15
     plasticCost: 0
     metalCost: 0
@@ -342,7 +342,7 @@ MonoBehaviour:
     attacksPerSec: 2
     attackAnimDelay: 0
     range: 35
-    targetcount: 0
+    targetcount: 1
     cardboardCost: 18
     plasticCost: 5
     metalCost: 0
@@ -350,7 +350,7 @@ MonoBehaviour:
     attacksPerSec: 2.4
     attackAnimDelay: 0
     range: 42
-    targetcount: 0
+    targetcount: 1
     cardboardCost: 20
     plasticCost: 20
     metalCost: 10
