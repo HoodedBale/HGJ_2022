@@ -8,6 +8,7 @@ public class LootTableSO : ScriptableObject
     [System.Serializable]
     public class LootItem
     {
+        public GameObject[] items;
         public GameObject item;
         public int chance;
     }
@@ -23,6 +24,25 @@ public class LootTableSO : ScriptableObject
             if(roll < table[i].chance)
             {
                 return table[i].item;
+            }
+            else
+            {
+                roll -= table[i].chance;
+            }
+        }
+
+        return null;
+    }
+
+    public GameObject[] RollLoots()
+    {
+        int roll = Random.Range(0, 100);
+
+        for (int i = 0; i < table.Count; ++i)
+        {
+            if (roll < table[i].chance)
+            {
+                return table[i].items;
             }
             else
             {
