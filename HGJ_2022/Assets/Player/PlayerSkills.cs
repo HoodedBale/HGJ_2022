@@ -43,6 +43,8 @@ public class PlayerSkills : MonoBehaviour
                 //GetComponent<MovementScript>().movementspeed *= 2;
                 dashing = true;
                 StartCoroutine(DashTimer());
+                dashTimer = 0;
+                GetComponent<CapsuleCollider>().isTrigger = true;
             }
         }
     }
@@ -52,6 +54,7 @@ public class PlayerSkills : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         dashing = false;
         dashedEnemies.Clear();
+        GetComponent<CapsuleCollider>().isTrigger = false;
         //GetComponent<MovementScript>().movementspeed /= 2;
     }
 
@@ -79,6 +82,18 @@ public class PlayerSkills : MonoBehaviour
             {
                 collision.gameObject.GetComponent<HealthBehaviour>().DamageHealth(dashUpgrade[dashLevel].damage);
                 dashedEnemies.Add(collision.gameObject);
+            }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject != null && !dashedEnemies.Contains(other.gameObject))
+        {
+            if (other.gameObject.tag == "Enemy" && Dashing())
+            {
+                other.gameObject.GetComponent<HealthBehaviour>().DamageHealth(dashUpgrade[dashLevel].damage);
+                dashedEnemies.Add(other.gameObject);
             }
         }
     }
