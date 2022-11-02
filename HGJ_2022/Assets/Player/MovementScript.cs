@@ -28,8 +28,8 @@ public class MovementScript : MonoBehaviour
 
     void Movement()
     {
-        //if (GetComponent<PlayerSkills>().Dashing())
-        //    return;
+        if (GetComponent<PlayerSkills>().Dashing())
+            return;
 
         Vector3 movementaxis = Vector3.zero;
         if(Input.GetKey(KeyCode.A))
