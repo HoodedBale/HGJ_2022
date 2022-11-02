@@ -13,17 +13,9 @@ public class MonsterSpawner : MonoBehaviour
 
     float waveTimer = 0;
 
+    public WaveSystemSO waveData;
+
     bool isWaiting = false;
-
-    [System.Serializable]
-    public class SpawnEntry
-    {
-        public GameObject monsterSpawned;
-        public int monsterCount;
-        public float nextSpawnDelay;
-    }
-
-    public SpawnEntry[] spawnList;
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +44,7 @@ public class MonsterSpawner : MonoBehaviour
         }
         else
         {
-            foreach (SpawnEntry entry in spawnList)
+            foreach (WaveSystemSO.SpawnEntry entry in waveData.spawnList)
             {
                 for (int count = 0; count < entry.monsterCount; count++) //spawn monsters up to monster count in that entry
                 {
