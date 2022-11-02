@@ -51,7 +51,7 @@ public class MonsterBehaviour : MonoBehaviour
         }
         else
         {
-            combatbehaviour.gameObject.SetActive(false);
+            combatbehaviour.gameObject.SetActive(true);
             currentstate = STATE.PATROLLING;
         }
     }
