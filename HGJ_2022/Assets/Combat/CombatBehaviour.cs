@@ -69,25 +69,51 @@ public class CombatBehaviour : MonoBehaviour
             atktimer = 0;
 
             Queue<GameObject> removequeue = new Queue<GameObject>();
-            Debug.Log(string.Format("targets: {0}", targets.Count));
-            for(int i = 0; (i < targetcount || combatType == CombatType.MELEE) && i < targets.Count; ++i)
+
+            if(combatType == CombatType.RANGE)
             {
-                if(targets[i] == null)
+                for (int i = 0; (i < targetcount) && i < targets.Count; ++i)
                 {
-                    removequeue.Enqueue(targets[i]);
-                    continue;
+                    if (targets[i] == null)
+                    {
+                        removequeue.Enqueue(targets[i]);
+                        continue;
+                    }
+
+                    GameObject projectile = Instantiate(projectilePrefab);
+                    projectile.transform.position = transform.position;
+                    projectile.GetComponent<ProjectileBehaviour>().target = targets[i];
+                    projectile.GetComponent<ProjectileBehaviour>().damage = damage;
                 }
 
-                GameObject projectile = Instantiate(projectilePrefab);
-                projectile.transform.position = transform.position;
-                projectile.GetComponent<ProjectileBehaviour>().target = targets[i];
-                projectile.GetComponent<ProjectileBehaviour>().damage = damage;
+                while (removequeue.Count > 0)
+                {
+                    GameObject toremove = removequeue.Dequeue();
+                    targets.Remove(toremove);
+                }
             }
-
-            while(removequeue.Count > 0)
+            else if(combatType == CombatType.MELEE)
             {
-                GameObject toremove = removequeue.Dequeue();
-                targets.Remove(toremove);
+                for (int i = 0; i < targets.Count; ++i)
+                {
+                    if (targets[i] == null)
+                    {
+                        removequeue.Enqueue(targets[i]);
+                        continue;
+                    }
+
+                    targets[i].GetComponentInChildren<HealthBehaviour>().DamageHealth(damage);
+                    //GameObject projectile = Instantiate(projectilePrefab);
+                    //projectile.transform.position = transform.position;
+                    //projectile.GetComponent<ProjectileBehaviour>().target = targets[i];
+                    //projectile.GetComponent<ProjectileBehaviour>().damage = damage;
+                }
+
+                while (removequeue.Count > 0)
+                {
+                    GameObject toremove = removequeue.Dequeue();
+                    targets.Remove(toremove);
+                }
             }
         }
         else

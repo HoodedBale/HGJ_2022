@@ -11,6 +11,7 @@ public class ProjectileBehaviour : MonoBehaviour
     public string targettag;
 
     HashSet<GameObject> withinrange = new HashSet<GameObject>();
+    bool kaboom = false;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +38,7 @@ public class ProjectileBehaviour : MonoBehaviour
             direction.Normalize();
             GetComponent<Rigidbody>().velocity = direction * speed;
         }
-        else
+        if(kaboom)
         {
             foreach(GameObject body in withinrange)
             {
@@ -60,6 +61,11 @@ public class ProjectileBehaviour : MonoBehaviour
         if(!withinrange.Contains(other.gameObject))
         {
             withinrange.Add(other.gameObject);
+        }
+
+        if(other.gameObject == target)
+        {
+            kaboom = true;
         }
     }
 
