@@ -141,7 +141,7 @@ Transform:
   m_GameObject: {fileID: 8487803344326141779}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 3.5, y: 7, z: 3.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6893828442069902968}
@@ -325,7 +325,7 @@ MonoBehaviour:
   - damage: 20
     attacksPerSec: 1.6
     attackAnimDelay: 0
-    range: 6
+    range: 21
     targetcount: 1
     cardboardCost: 0
     plasticCost: 0
@@ -333,7 +333,7 @@ MonoBehaviour:
   - damage: 30
     attacksPerSec: 1.8
     attackAnimDelay: 0
-    range: 8
+    range: 28
     targetcount: 0
     cardboardCost: 15
     plasticCost: 0
@@ -341,7 +341,7 @@ MonoBehaviour:
   - damage: 40
     attacksPerSec: 2
     attackAnimDelay: 0
-    range: 10
+    range: 35
     targetcount: 0
     cardboardCost: 18
     plasticCost: 5
@@ -349,7 +349,7 @@ MonoBehaviour:
   - damage: 56
     attacksPerSec: 2.4
     attackAnimDelay: 0
-    range: 12
+    range: 42
     targetcount: 0
     cardboardCost: 20
     plasticCost: 20
@@ -362,3 +362,4 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4345726161247763312, guid: 7e506978d18922e4f97d989c7f531ae5,
     type: 3}
   targetTag: Enemy
+  combatType: 0

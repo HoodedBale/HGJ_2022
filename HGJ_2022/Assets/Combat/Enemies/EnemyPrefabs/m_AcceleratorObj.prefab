@@ -128,7 +128,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4967553349849055753}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -154,7 +154,7 @@ MonoBehaviour:
   combattarget: {fileID: 0}
   engagerange: 5
   atkRate: 1
-  atkDamage: 20
+  atkDamage: 15
 --- !u!54 &2477881554177875879
 Rigidbody:
   m_ObjectHideFlags: 0

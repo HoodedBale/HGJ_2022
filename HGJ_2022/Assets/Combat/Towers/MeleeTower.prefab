@@ -115,7 +115,7 @@ MonoBehaviour:
   - damage: 50
     attacksPerSec: 0.5
     attackAnimDelay: 0
-    range: 2
+    range: 12
     targetcount: 1
     cardboardCost: 0
     plasticCost: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   - damage: 70
     attacksPerSec: 0.6
     attackAnimDelay: 0
-    range: 2
+    range: 12
     targetcount: 1
     cardboardCost: 8
     plasticCost: 8
@@ -131,7 +131,7 @@ MonoBehaviour:
   - damage: 90
     attacksPerSec: 0.7
     attackAnimDelay: 0
-    range: 2.5
+    range: 15
     targetcount: 1
     cardboardCost: 0
     plasticCost: 15
@@ -139,7 +139,7 @@ MonoBehaviour:
   - damage: 110
     attacksPerSec: 1
     attackAnimDelay: 0
-    range: 3
+    range: 18
     targetcount: 1
     cardboardCost: 20
     plasticCost: 20
@@ -181,7 +181,7 @@ Transform:
   m_GameObject: {fileID: 6630045987915075263}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 3.5, y: 7, z: 3.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 36972821289659956}
