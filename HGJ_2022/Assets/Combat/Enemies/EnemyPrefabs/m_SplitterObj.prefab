@@ -128,9 +128,9 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4755281858011221324}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -152,9 +152,7 @@ MonoBehaviour:
   turntime: 0.1
   combatbehaviour: {fileID: 8777197272848686742}
   combattarget: {fileID: 0}
-  engagerange: 5
-  atkRate: 0.7
-  atkDamage: 20
+  engagerange: 10
 --- !u!54 &4755281858011221366
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -298,8 +296,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   statTree:
-  - damage: 6
-    attacksPerSec: 1
+  - damage: 20
+    attacksPerSec: 0.7
     attackAnimDelay: 0
     range: 2
     targetcount: 1
