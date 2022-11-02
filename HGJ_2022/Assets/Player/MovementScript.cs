@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MovementScript : MonoBehaviour
 {
+    public List<float> speedUpgrade;
+    public int speedLevel = 0;
+
     public float movementspeed = 10;
     public float turntime = 0.1f;
     float turndamper = 0;
@@ -50,7 +53,7 @@ public class MovementScript : MonoBehaviour
         }
 
         movementaxis.Normalize();
-        GetComponent<Rigidbody>().velocity = movementaxis * movementspeed;
+        GetComponent<Rigidbody>().velocity = movementaxis * speedUpgrade[speedLevel];
 
         if (movementaxis.sqrMagnitude <= 0)
             return;
@@ -58,5 +61,19 @@ public class MovementScript : MonoBehaviour
         float targetangle = Mathf.Atan2(movementaxis.x, movementaxis.z) * Mathf.Rad2Deg;
         float angle = Mathf.SmoothDampAngle(transform.rotation.eulerAngles.y, targetangle, ref turndamper, turntime);
         transform.rotation = Quaternion.Euler(0, angle, 0);
+    }
+
+    public void LevelUp(int level)
+    {
+        speedLevel += level;
+        if (speedLevel >= speedUpgrade.Count)
+        {
+            speedLevel = speedUpgrade.Count - 1;
+        }
+
+        if(speedLevel < 0)
+        {
+            speedLevel = 0;
+        }
     }
 }
