@@ -3157,6 +3157,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8782692519352367201, guid: 2a1d6299506ad55469ee69710141bddb,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8782692519352367203, guid: 2a1d6299506ad55469ee69710141bddb,
         type: 3}
       propertyPath: m_RootOrder
@@ -3219,3 +3224,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a1d6299506ad55469ee69710141bddb, type: 3}
+--- !u!1 &8782692519108094939 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8782692519352367215, guid: 2a1d6299506ad55469ee69710141bddb,
+    type: 3}
+  m_PrefabInstance: {fileID: 8782692519108094938}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8782692519108094940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8782692519108094939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fda94075e7b6142888ea8260bf1e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashUpgrade:
+  - damage: 50
+    cooldown: 0.5
+  dashLevel: 0
