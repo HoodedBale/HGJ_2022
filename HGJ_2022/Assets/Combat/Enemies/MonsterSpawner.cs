@@ -52,8 +52,9 @@ public class MonsterSpawner : MonoBehaviour
                 for (int count = 0; count < entry.monsterCount; count++) //spawn monsters up to monster count in that entry
                 {
                     GameObject monster = Instantiate(entry.monsterSpawned);
-                    monster.GetComponent<MonsterBehaviour>().targettransform = targetWaypoint;
-                    monster.GetComponent<MonsterBehaviour>().combattarget = targetGoal;
+                    MonsterBehaviour monsterbehaviour = monster.GetComponentInChildren<MonsterBehaviour>();
+                    monsterbehaviour.targettransform = targetWaypoint;
+                    monsterbehaviour.combattarget = targetGoal;
                     Vector3 pos = monster.transform.position;
                     pos.x = transform.position.x;
                     pos.z = transform.position.z;
