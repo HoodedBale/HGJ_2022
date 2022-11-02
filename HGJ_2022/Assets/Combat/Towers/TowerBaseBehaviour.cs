@@ -5,6 +5,7 @@ using UnityEngine;
 public class TowerBaseBehaviour : MonoBehaviour
 {
     bool inrange = false;
+    public GameObject tower;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,11 @@ public class TowerBaseBehaviour : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public bool HasTower()
+    {
+        return tower != null;
     }
 
     private void OnTriggerEnter(Collider other)

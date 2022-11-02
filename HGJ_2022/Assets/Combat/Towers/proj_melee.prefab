@@ -114,7 +114,7 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 20
   damage: 1
-  aoe: 4
+  aoe: 2
   targettag: Enemy
 --- !u!54 &767509497334323205
 Rigidbody:
