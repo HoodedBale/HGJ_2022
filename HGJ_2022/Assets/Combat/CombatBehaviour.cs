@@ -41,6 +41,9 @@ public class CombatBehaviour : MonoBehaviour
     bool attackanimplayed = false;
     List<GameObject> targets = new List<GameObject>();
 
+    [Header("Sound")]
+    public AudioClip attackSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -72,14 +75,15 @@ public class CombatBehaviour : MonoBehaviour
 
             if(combatType == CombatType.RANGE)
             {
-                for (int i = 0; (i < targetcount) && i < targets.Count; ++i)
+                int targetsHit = 0;
+                for (int i = 0; (targetsHit < targetcount) && i < targets.Count; ++i)
                 {
                     if (targets[i] == null)
                     {
                         removequeue.Enqueue(targets[i]);
                         continue;
                     }
-
+                    ++targetsHit;
                     GameObject projectile = Instantiate(projectilePrefab);
                     projectile.transform.position = transform.position;
                     projectile.GetComponent<ProjectileBehaviour>().target = targets[i];
@@ -91,6 +95,9 @@ public class CombatBehaviour : MonoBehaviour
                     GameObject toremove = removequeue.Dequeue();
                     targets.Remove(toremove);
                 }
+
+                if(targets.Count > 0)
+                    PlayAttackSound();
             }
             else if(combatType == CombatType.MELEE)
             {
@@ -114,6 +121,8 @@ public class CombatBehaviour : MonoBehaviour
                     GameObject toremove = removequeue.Dequeue();
                     targets.Remove(toremove);
                 }
+                if (targets.Count > 0)
+                    PlayAttackSound();
             }
         }
         else
@@ -154,6 +163,14 @@ public class CombatBehaviour : MonoBehaviour
         if (targets.Contains(other.gameObject))
         {
             targets.Remove(other.gameObject);
+        }
+    }
+
+    void PlayAttackSound()
+    {
+        if(attackSound != null)
+        {
+            SoundManager.current.PlaySound(attackSound, transform);
         }
     }
 }

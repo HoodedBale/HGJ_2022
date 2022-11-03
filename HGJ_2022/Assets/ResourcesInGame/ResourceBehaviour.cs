@@ -13,6 +13,8 @@ public class ResourceBehaviour : MonoBehaviour
     public OnConsume onconsume;
     int cardboard, plastic, metal;
 
+    public AudioClip[] pickupSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,11 +50,18 @@ public class ResourceBehaviour : MonoBehaviour
             GameStats.resources[(int)GameStats.RESOURCE_TYPE.CARDBOARD] += cardboard;
             GameStats.resources[(int)GameStats.RESOURCE_TYPE.PLASTIC] += plastic;
             GameStats.resources[(int)GameStats.RESOURCE_TYPE.METAL] += metal;
+            PlayPickupAudio();
 
             if (onconsume != null)
             {
                 onconsume();
             }
         }
+    }
+
+    void PlayPickupAudio()
+    {
+        int id = Random.Range(0, pickupSound.Length);
+        SoundManager.current.PlaySound(pickupSound[id]);
     }
 }
