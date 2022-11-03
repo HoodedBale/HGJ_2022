@@ -190,6 +190,8 @@ MonoBehaviour:
   diesound:
   - {fileID: 8300000, guid: effa0ceff0c1ac844bac431e86c9142e, type: 3}
   - {fileID: 8300000, guid: 049435c7fa5211d4a8566de78b8beb86, type: 3}
+  explosionVFX: {fileID: 3674051109831480970, guid: e3257eaa36dfe4e45b6108813bb2028c,
+    type: 3}
 --- !u!1 &7043631278960694316
 GameObject:
   m_ObjectHideFlags: 0

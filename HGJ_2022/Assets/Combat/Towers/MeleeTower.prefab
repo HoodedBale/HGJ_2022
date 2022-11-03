@@ -153,6 +153,9 @@ MonoBehaviour:
     type: 3}
   targetTag: Enemy
   combatType: 1
+  meleeAtkVFX: {fileID: 4486139596509043785, guid: 6f188aebaa70ce24aaf4e6dd2a425bbb,
+    type: 3}
+  attackSound: {fileID: 0}
 --- !u!1 &6630045987915075263
 GameObject:
   m_ObjectHideFlags: 0

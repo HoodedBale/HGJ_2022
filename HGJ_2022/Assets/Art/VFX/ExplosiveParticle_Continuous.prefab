@@ -9750,6 +9750,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 509160298630961921}
+  - component: {fileID: 6391972912660180336}
   m_Layer: 0
   m_Name: ExplosiveParticle_Continuous
   m_TagString: Untagged
@@ -9775,6 +9776,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6391972912660180336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3674051109831480970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4e2c33038144e46add2b4db19be772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  killTimer: 5
 --- !u!1 &5956703923665293331
 GameObject:
   m_ObjectHideFlags: 0

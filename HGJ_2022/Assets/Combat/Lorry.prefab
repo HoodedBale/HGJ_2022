@@ -117,6 +117,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 59a1db60ce1c3ce4eaa89f87c55a72e7, type: 3}
   diesound:
   - {fileID: 8300000, guid: 8e122d6814458b4478a7d4f27db91256, type: 3}
+  explosionVFX: {fileID: 3674051109831480970, guid: fded7062a1db077438b7444a7d68ad4f,
+    type: 3}
 --- !u!1001 &568883066
 PrefabInstance:
   m_ObjectHideFlags: 0

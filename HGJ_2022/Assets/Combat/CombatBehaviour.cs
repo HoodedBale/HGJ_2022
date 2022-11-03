@@ -37,6 +37,8 @@ public class CombatBehaviour : MonoBehaviour
     public string targetTag;
     public CombatType combatType = CombatType.RANGE;
 
+    public GameObject meleeAtkVFX;
+
     float atktimer = 0;
     bool attackanimplayed = false;
     List<GameObject> targets = new List<GameObject>();
@@ -122,6 +124,7 @@ public class CombatBehaviour : MonoBehaviour
                     targets.Remove(toremove);
                 }
                 if (targets.Count > 0)
+                    Instantiate(meleeAtkVFX, transform.position, Quaternion.identity);
                     PlayAttackSound();
             }
         }

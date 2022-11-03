@@ -6,7 +6,7 @@ public class HealthBehaviour : MonoBehaviour
 {
     public int currenthealth, maxhealth;
     public AudioClip[] hitsound, diesound;
-
+    public GameObject explosionVFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,10 +42,8 @@ public class HealthBehaviour : MonoBehaviour
     void Die()
     {
         PlayDieSound();
-        if(currenthealth <= 0)
-        {
-            Destroy(gameObject);
-        }
+        Instantiate(explosionVFX, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 
     void PlayHitSound()

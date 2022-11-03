@@ -313,3 +313,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currenthealth: 40
   maxhealth: 40
+  explosionVFX: {fileID: 3674051109831480970, guid: e3257eaa36dfe4e45b6108813bb2028c,
+    type: 3}
