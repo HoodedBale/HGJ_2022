@@ -51,6 +51,7 @@ public class ResourceBehaviour : MonoBehaviour
             GameStats.resources[(int)GameStats.RESOURCE_TYPE.PLASTIC] += plastic;
             GameStats.resources[(int)GameStats.RESOURCE_TYPE.METAL] += metal;
             PlayPickupAudio();
+            //CitizenVoices.current.PlayCitizenVoice();
 
             if (onconsume != null)
             {

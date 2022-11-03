@@ -5,6 +5,7 @@ using UnityEngine;
 public class HealthBehaviour : MonoBehaviour
 {
     public int currenthealth, maxhealth;
+    public AudioClip[] hitsound, diesound;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class HealthBehaviour : MonoBehaviour
 
     public void DamageHealth(int damage = 0)
     {
+        PlayHitSound();
         currenthealth -= damage;
         if (currenthealth < 0)
             currenthealth = 0;
@@ -39,9 +41,22 @@ public class HealthBehaviour : MonoBehaviour
 
     void Die()
     {
+        PlayDieSound();
         if(currenthealth <= 0)
         {
             Destroy(gameObject);
         }
+    }
+
+    void PlayHitSound()
+    {
+        int id = Random.Range(0, hitsound.Length);
+        SoundManager.current.PlaySound(hitsound[id], transform.position);
+    }
+
+    void PlayDieSound()
+    {
+        int id = Random.Range(0, diesound.Length);
+        SoundManager.current.PlaySound(diesound[id], transform.position);
     }
 }

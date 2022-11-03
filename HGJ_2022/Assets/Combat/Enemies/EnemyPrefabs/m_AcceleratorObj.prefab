@@ -183,6 +183,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currenthealth: 250
   maxhealth: 250
+  hitsound:
+  - {fileID: 8300000, guid: cfcf1cd3af52f844bb59c350d7f43c6c, type: 3}
+  - {fileID: 8300000, guid: ef9a472227ceb1c4ab0d25cb90c08371, type: 3}
+  - {fileID: 8300000, guid: 4552408faec42b04c93e573c1e8bb956, type: 3}
+  diesound:
+  - {fileID: 8300000, guid: effa0ceff0c1ac844bac431e86c9142e, type: 3}
+  - {fileID: 8300000, guid: 049435c7fa5211d4a8566de78b8beb86, type: 3}
 --- !u!1 &7043631278960694316
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,3 +320,4 @@ MonoBehaviour:
     type: 3}
   targetTag: Lorry
   combatType: 0
+  attackSound: {fileID: 0}

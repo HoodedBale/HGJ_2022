@@ -153,8 +153,6 @@ MonoBehaviour:
   combatbehaviour: {fileID: 5986832698851383265}
   combattarget: {fileID: 0}
   engagerange: 10
-  atkRate: 1
-  atkDamage: 5
 --- !u!54 &2477881554177875879
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -185,6 +183,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currenthealth: 100
   maxhealth: 100
+  hitsound:
+  - {fileID: 8300000, guid: d110f0767304ed94089a1ea0a59937af, type: 3}
+  - {fileID: 8300000, guid: 70157d8da8fb6934ea3bad6ce104e923, type: 3}
+  - {fileID: 8300000, guid: 2c8768044a173384d9f01e1406a49416, type: 3}
+  diesound:
+  - {fileID: 8300000, guid: 8b0fa0e160796094491b4bf25bebe0d7, type: 3}
+  - {fileID: 8300000, guid: 3c6832d54ec6d7f4d9b6bb6e6ca220ba, type: 3}
 --- !u!1 &7043631278960694316
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,3 +320,4 @@ MonoBehaviour:
     type: 3}
   targetTag: Lorry
   combatType: 0
+  attackSound: {fileID: 0}

@@ -48,6 +48,19 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    public void PlaySound(AudioClip clip, Vector3 position)
+    {
+        if (instanceQueue.Count > 0)
+        {
+            GameObject instance = instanceQueue.Dequeue();
+            instance.GetComponent<AudioSource>().clip = clip;
+            instance.transform.localPosition = position;
+            instance.GetComponent<AudioSource>().Play();
+            instance.GetComponent<AudioSource>().loop = false;
+            StartCoroutine(KillSound(instance));
+        }
+    }
+
     IEnumerator KillSound(GameObject audioObj)
     {
         AudioSource audio = audioObj.GetComponent<AudioSource>();
