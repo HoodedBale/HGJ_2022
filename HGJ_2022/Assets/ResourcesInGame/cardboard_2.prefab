@@ -62,6 +62,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8940265303539510402, guid: 081851ce175b7ca4a826871401ec21c1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8940265303539510404, guid: 081851ce175b7ca4a826871401ec21c1,
         type: 3}
       propertyPath: cardboardmax
@@ -77,5 +82,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: cardboard_2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8940265303539510405, guid: 081851ce175b7ca4a826871401ec21c1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 081851ce175b7ca4a826871401ec21c1, type: 3}
+--- !u!1 &6919492238944253228 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8940265303539510407, guid: 081851ce175b7ca4a826871401ec21c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2023464692690770347}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &6666796601111790337
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6919492238944253228}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
