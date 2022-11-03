@@ -20,6 +20,9 @@ public class BuildUI : MonoBehaviour
 
     Vector3 buildOptionsOrigin, upgradeOptionsOrigin;
 
+    [Header("Audio")]
+    public AudioClip[] placementSfx;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -133,6 +136,7 @@ public class BuildUI : MonoBehaviour
         //buildOptions.SetActive(false);
         towerbase.tower = tower;
         DeassignTowerBase(towerbase);
+        PlayPlacementSound();
     }
     public void BuildSniper()
     {
@@ -149,6 +153,7 @@ public class BuildUI : MonoBehaviour
         //buildOptions.SetActive(false);
         towerbase.tower = tower;
         DeassignTowerBase(towerbase);
+        PlayPlacementSound();
     }
 
     public void UpgradeTower()
@@ -158,6 +163,7 @@ public class BuildUI : MonoBehaviour
             towerbase.tower.GetComponent<TowerBehaviour>().Upgrade();
             //upgradeOptions.SetActive(false);
             DeassignTowerBase(towerbase);
+            PlayPlacementSound();
         }
     }
 
@@ -172,4 +178,9 @@ public class BuildUI : MonoBehaviour
         }
     }
 
+    void PlayPlacementSound()
+    {
+        int id = Random.Range(0, placementSfx.Length);
+        SoundManager.current.PlaySound(placementSfx[id]);
+    }
 }

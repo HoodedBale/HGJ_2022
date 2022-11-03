@@ -117,3 +117,8 @@ MonoBehaviour:
   plasticmax: 0
   metalmin: 0
   metalmax: 0
+  pickupSound:
+  - {fileID: 8300000, guid: aeab258852b498d4ca0df28605f17151, type: 3}
+  - {fileID: 8300000, guid: bfdc66fefbe53734391a144363a09e1c, type: 3}
+  - {fileID: 8300000, guid: 7e4a0c584a2424240a58e8d8023f6526, type: 3}
+  - {fileID: 8300000, guid: 8f66989f28171614c878aacbcd04268d, type: 3}

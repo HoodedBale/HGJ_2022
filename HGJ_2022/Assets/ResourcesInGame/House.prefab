@@ -117,6 +117,8 @@ MonoBehaviour:
   minSpawnArea: {x: -2, y: -2}
   maxSpawnArea: {x: 2, y: 2}
   resourceTargetPosition: {fileID: 8394382873410983784}
+  spawnSound:
+  - {fileID: 8300000, guid: 8eeb364756e38d342ba1f5596a689302, type: 3}
 --- !u!1 &4829057318687155070
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,6 +269,7 @@ MonoBehaviour:
   plasticmax: 0
   metalmin: 0
   metalmax: 0
+  pickupSound: []
 --- !u!1001 &357436171212767386
 PrefabInstance:
   m_ObjectHideFlags: 0

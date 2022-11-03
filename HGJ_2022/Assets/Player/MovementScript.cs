@@ -14,6 +14,8 @@ public class MovementScript : MonoBehaviour
     public static MovementScript current;
     public bool disablemovement = false;
 
+    public AudioSource footsteps;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +52,18 @@ public class MovementScript : MonoBehaviour
         if(Input.GetKey(KeyCode.S))
         {
             movementaxis.z = -1;
+        }
+
+        if(footsteps != null)
+        {
+            if (movementaxis.sqrMagnitude > 0)
+            {
+                footsteps.UnPause();
+            }
+            else
+            {
+                footsteps.Pause();
+            }
         }
 
         movementaxis.Normalize();

@@ -363,3 +363,4 @@ MonoBehaviour:
     type: 3}
   targetTag: Enemy
   combatType: 0
+  attackSound: {fileID: 8300000, guid: a56b9bb7395cfe444aff03d3af992efe, type: 3}
