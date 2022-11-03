@@ -26,7 +26,9 @@ public class HealthBehaviour : MonoBehaviour
             currenthealth = 0;
         if (currenthealth > maxhealth)
             currenthealth = maxhealth;
-        Die();
+
+        if (currenthealth == 0)
+            Die();
     }
 
     public void UpgradeHealth(int upgrade = 0)
@@ -36,7 +38,9 @@ public class HealthBehaviour : MonoBehaviour
 
         if (currenthealth < 0)
             currenthealth = 0;
-        Die();
+
+        if (currenthealth == 0)
+            Die();
     }
 
     void Die()
