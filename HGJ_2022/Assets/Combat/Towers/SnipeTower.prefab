@@ -365,6 +365,7 @@ MonoBehaviour:
     type: 3}
   targetTag: Enemy
   combatType: 0
+  meleeAtkVFX: {fileID: 0}
   attackSound: {fileID: 8300000, guid: a56b9bb7395cfe444aff03d3af992efe, type: 3}
 --- !u!1001 &5520597100291217191
 PrefabInstance:
@@ -401,7 +402,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9c1dcb76dbb49364ea370cd143d2427d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.53
+      value: 2.11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9c1dcb76dbb49364ea370cd143d2427d,
         type: 3}
@@ -496,7 +497,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9de9808ec14494b49b0fb0bca55a2735,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5999999
+      value: 0.17999983
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9de9808ec14494b49b0fb0bca55a2735,
         type: 3}
