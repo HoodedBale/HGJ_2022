@@ -49,4 +49,17 @@ public class TowerFactory : MonoBehaviour
 
         return null;
     }
+
+    public int GetCardboardCost(TowerType towerType)
+    {
+        return towermenu[(int)towerType].cardboardCost;
+    }
+    public int GetPlasticCost(TowerType towerType)
+    {
+        return towermenu[(int)towerType].plasticCost;
+    }
+    public int GetMetalCost(TowerType towerType)
+    {
+        return towermenu[(int)towerType].metalCost;
+    }
 }

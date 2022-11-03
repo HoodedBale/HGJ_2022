@@ -23,6 +23,11 @@ public class BuildUI : MonoBehaviour
     [Header("Audio")]
     public AudioClip[] placementSfx;
 
+    [Header("UI")]
+    public Text meleeBuildCB, meleeBuildP, meleeBuildM;
+    public Text sniperBuildCB, sniperBuildP, sniperBuildM;
+    public Text upgradeCB, upgradeP, upgradeM;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,10 +54,11 @@ public class BuildUI : MonoBehaviour
         //    ActivateBuildOptions();
         //}
 
-        if(towerbase != null && towerbase.HasTower())
-        {
-            upgradeBtn.enabled = towerbase.tower.GetComponent<TowerBehaviour>().CanUpgrade();
-        }
+        //if(towerbase != null && towerbase.HasTower())
+        //{
+        //    upgradeBtn.enabled = towerbase.tower.GetComponent<TowerBehaviour>().CanUpgrade();
+        //}
+        UpdateCost();
 
         //MovementScript.current.disablemovement = buildOptions.activeSelf || upgradeOptions.activeSelf;
     }
@@ -160,10 +166,12 @@ public class BuildUI : MonoBehaviour
     {
         if(towerbase != null && towerbase.HasTower())
         {
-            towerbase.tower.GetComponent<TowerBehaviour>().Upgrade();
+            if(towerbase.tower.GetComponent<TowerBehaviour>().Upgrade())
+            {
+                DeassignTowerBase(towerbase);
+                PlayPlacementSound();
+            }
             //upgradeOptions.SetActive(false);
-            DeassignTowerBase(towerbase);
-            PlayPlacementSound();
         }
     }
 
@@ -182,5 +190,35 @@ public class BuildUI : MonoBehaviour
     {
         int id = Random.Range(0, placementSfx.Length);
         SoundManager.current.PlaySound(placementSfx[id]);
+    }
+
+    void UpdateCost()
+    {
+        meleeBuildCB.text = TowerFactory.current.GetCardboardCost(TowerFactory.TowerType.MELEE).ToString();
+        meleeBuildP.text = TowerFactory.current.GetPlasticCost(TowerFactory.TowerType.MELEE).ToString();
+        meleeBuildM.text = TowerFactory.current.GetMetalCost(TowerFactory.TowerType.MELEE).ToString();
+
+        sniperBuildCB.text = TowerFactory.current.GetCardboardCost(TowerFactory.TowerType.SNIPER).ToString();
+        sniperBuildP.text = TowerFactory.current.GetPlasticCost(TowerFactory.TowerType.SNIPER).ToString();
+        sniperBuildM.text = TowerFactory.current.GetMetalCost(TowerFactory.TowerType.SNIPER).ToString();
+
+        if(towerbase != null)
+        {
+            if(towerbase.tower != null)
+            {
+                TowerBehaviour tower = towerbase.tower.GetComponent<TowerBehaviour>();
+                if (tower.combatbehaviour.level == tower.combatbehaviour.statTree.Count - 1)
+                {
+                    upgradeBtn.gameObject.SetActive(false);
+                }
+                else
+                {
+                    upgradeBtn.gameObject.SetActive(true);
+                    upgradeCB.text = tower.combatbehaviour.statTree[tower.combatbehaviour.level + 1].cardboardCost.ToString();
+                    upgradeP.text = tower.combatbehaviour.statTree[tower.combatbehaviour.level + 1].plasticCost.ToString();
+                    upgradeM.text = tower.combatbehaviour.statTree[tower.combatbehaviour.level + 1].metalCost.ToString();
+                }
+            }
+        }
     }
 }

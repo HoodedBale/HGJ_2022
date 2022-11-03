@@ -32,8 +32,10 @@ public class TowerBehaviour : MonoBehaviour
             GameStats.resources[(int)GameStats.RESOURCE_TYPE.METAL] >= stat.metalCost;
     }
 
-    public void Upgrade()
+    public bool Upgrade()
     {
+        if (!CanUpgrade())
+            return false;
         if(CanUpgrade())
         {
             CombatStat stat = combatbehaviour.statTree[combatbehaviour.level + 1];
@@ -42,5 +44,6 @@ public class TowerBehaviour : MonoBehaviour
             GameStats.resources[(int)GameStats.RESOURCE_TYPE.METAL] -= stat.metalCost;
             combatbehaviour.LevelUp(1);
         }
+        return true;
     }
 }
