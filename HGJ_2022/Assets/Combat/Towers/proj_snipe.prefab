@@ -116,6 +116,8 @@ MonoBehaviour:
   damage: 1
   aoe: 1
   targettag: Enemy
+  projectileHitVFX: {fileID: 3674051109831480970, guid: 3b8d4c1086644404589da31e8ac8540c,
+    type: 3}
 --- !u!54 &2287039851034129560
 Rigidbody:
   m_ObjectHideFlags: 0

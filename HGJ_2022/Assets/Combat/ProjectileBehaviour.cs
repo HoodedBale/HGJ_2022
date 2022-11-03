@@ -10,6 +10,8 @@ public class ProjectileBehaviour : MonoBehaviour
     public float aoe;
     public string targettag;
 
+    public GameObject projectileHitVFX;
+
     HashSet<GameObject> withinrange = new HashSet<GameObject>();
     bool kaboom = false;
 
@@ -50,6 +52,7 @@ public class ProjectileBehaviour : MonoBehaviour
                     health.DamageHealth(damage);
                 }
             }
+            Instantiate(projectileHitVFX, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
