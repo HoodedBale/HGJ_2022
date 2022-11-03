@@ -53,7 +53,10 @@ public class ProjectileBehaviour : MonoBehaviour
                     health.DamageHealth(damage);
                 }
             }
-            Instantiate(projectileHitVFX, transform.position, transform.rotation);
+            if(projectileHitVFX != null)
+            {
+                Instantiate(projectileHitVFX, transform.position, transform.rotation);
+            }
             Destroy(gameObject);
         }
     }
