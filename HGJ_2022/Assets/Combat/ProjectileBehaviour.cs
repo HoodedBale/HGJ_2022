@@ -44,6 +44,7 @@ public class ProjectileBehaviour : MonoBehaviour
         {
             foreach(GameObject body in withinrange)
             {
+                Debug.Log("hit for " + damage);
                 if (body == null)
                     continue;
                 HealthBehaviour health = body.GetComponent<HealthBehaviour>();

@@ -112,8 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceLootTable: {fileID: 11400000, guid: 67fea1d6e44b61042bdc018fd12a06c7, type: 2}
-  minTime: 2
-  maxTime: 5
+  minTime: 10
+  maxTime: 25
   minSpawnArea: {x: -2, y: -2}
   maxSpawnArea: {x: 2, y: 2}
   resourceTargetPosition: {fileID: 8394382873410983784}
