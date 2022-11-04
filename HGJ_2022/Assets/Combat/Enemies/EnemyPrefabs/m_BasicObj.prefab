@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 6872525889795255709}
   - component: {fileID: 2477881554177875879}
   - component: {fileID: 8580298750641685562}
+  - component: {fileID: 2705000961211358044}
   m_Layer: 0
   m_Name: m_Basic
   m_TagString: Enemy
@@ -192,6 +193,29 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3c6832d54ec6d7f4d9b6bb6e6ca220ba, type: 3}
   explosionVFX: {fileID: 3674051109831480970, guid: e3257eaa36dfe4e45b6108813bb2028c,
     type: 3}
+  healthBarFlash: {fileID: 0}
+--- !u!195 &2705000961211358044
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4967553349849055753}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &7043631278960694316
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,4 +346,5 @@ MonoBehaviour:
     type: 3}
   targetTag: Lorry
   combatType: 0
+  meleeAtkVFX: {fileID: 0}
   attackSound: {fileID: 0}
