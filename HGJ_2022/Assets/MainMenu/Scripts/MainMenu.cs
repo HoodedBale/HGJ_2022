@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
     bool inCredits = false;
     bool pressOptions = false;
     bool pressCredits = false;
+    bool backfrom = false;
 
     // Start is called before the first frame update
     void Start()
@@ -68,6 +69,31 @@ public class MainMenu : MonoBehaviour
             LeanTween.rotateX(MainCamera, 90f, 1).setEaseInOutCubic();
             LeanTween.move(MainCamera, new Vector3(0, 22, -42), 1).setEaseInOutCubic();
             StartCoroutine(OpenCreditsWait());
+        }
+    }
+
+    public void back(bool backFromWhere)
+    {
+        if(backFromWhere == true)
+        {
+            if (inOptions == true)
+            {
+                LeanTween.rotateX(MainCamera, -27.5f, 1).setEaseInOutCubic();
+                inOptions = false;
+                pressOptions = false;
+                pressCredits = false;
+            }
+        }
+        else
+        {
+            if (inCredits == true)
+            {
+                LeanTween.rotateX(MainCamera, -27.5f, 1).setEaseInOutCubic();
+                LeanTween.move(MainCamera, new Vector3(0, -27.5f, -35), 1).setEaseInOutCubic();
+                inCredits = false;
+                pressOptions = false;
+                pressCredits = false;
+            }
         }
     }
 
