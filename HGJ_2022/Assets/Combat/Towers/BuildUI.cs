@@ -27,6 +27,7 @@ public class BuildUI : MonoBehaviour
     public Text meleeBuildCB, meleeBuildP, meleeBuildM;
     public Text sniperBuildCB, sniperBuildP, sniperBuildM;
     public Text upgradeCB, upgradeP, upgradeM;
+    public Text notenoughTxt;
 
     // Start is called before the first frame update
     void Start()
@@ -136,7 +137,10 @@ public class BuildUI : MonoBehaviour
 
         GameObject tower = TowerFactory.current.PurchaseTower(TowerFactory.TowerType.MELEE);
         if (tower == null)
+        {
+            StartCoroutine(NotEnoughRoutine());
             return;
+        }
         tower.transform.SetParent(towerbase.transform);
         tower.transform.localPosition = Vector3.zero;
         //buildOptions.SetActive(false);
@@ -153,7 +157,10 @@ public class BuildUI : MonoBehaviour
 
         GameObject tower = TowerFactory.current.PurchaseTower(TowerFactory.TowerType.SNIPER);
         if (tower == null)
+        {
+            StartCoroutine(NotEnoughRoutine());
             return;
+        }
         tower.transform.SetParent(towerbase.transform);
         tower.transform.localPosition = Vector3.zero;
         //buildOptions.SetActive(false);
@@ -170,6 +177,10 @@ public class BuildUI : MonoBehaviour
             {
                 DeassignTowerBase(towerbase);
                 PlayPlacementSound();
+            }
+            else
+            {
+                StartCoroutine(NotEnoughRoutine());
             }
             //upgradeOptions.SetActive(false);
         }
@@ -220,5 +231,12 @@ public class BuildUI : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator NotEnoughRoutine()
+    {
+        notenoughTxt.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3);
+        notenoughTxt.gameObject.SetActive(false);
     }
 }
