@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 607112191100446464}
   m_Layer: 0
   m_Name: House0
-  m_TagString: Untagged
+  m_TagString: House
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -270,6 +270,8 @@ MonoBehaviour:
   metalmin: 0
   metalmax: 0
   pickupSound: []
+  feedbackFX: {fileID: 0}
+  feedbackFXSpawner: {fileID: 0}
 --- !u!1001 &357436171212767386
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -18,6 +18,7 @@ public class PlayerSkills : MonoBehaviour
     bool dashing = false;
     HashSet<GameObject> dashedEnemies = new HashSet<GameObject>();
 
+    public GameObject hornEffect;
     public AudioSource hornSound;
 
     // Start is called before the first frame update
@@ -30,7 +31,7 @@ public class PlayerSkills : MonoBehaviour
     void Update()
     {
         Dash();
-        HornSound();
+        HonkHorn();
     }
 
     void Dash()
@@ -101,7 +102,7 @@ public class PlayerSkills : MonoBehaviour
         }
     }
 
-    void HornSound()
+    void HonkHorn()
     {
         if(Input.GetMouseButtonDown(1))
         {
@@ -109,6 +110,7 @@ public class PlayerSkills : MonoBehaviour
             {
                 hornSound.Play();
             }
+            Instantiate(hornEffect, transform);
         }
     }
 }

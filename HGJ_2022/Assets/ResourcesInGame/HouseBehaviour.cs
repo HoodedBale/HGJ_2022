@@ -58,26 +58,31 @@ public class HouseBehaviour : MonoBehaviour
         }
         else if (currentTime <= 0)
         {
-            OpenDoor();
-            GameObject[] resources = resourceLootTable.RollLoots();
-            for(int i = 0; i < resources.Length; ++i)
+            SpawnImmediate();
+        }
+    }
+
+    public void SpawnImmediate()
+    {
+        OpenDoor();
+        GameObject[] resources = resourceLootTable.RollLoots();
+        for (int i = 0; i < resources.Length; ++i)
+        {
+            GameObject resource = Instantiate(resources[i]);
+            resource.transform.position = transform.position;
+
+            Vector3 targetloc = resourceTargetPosition.position;
+            targetloc.x += Random.Range(minSpawnArea.x, maxSpawnArea.x);
+            targetloc.z += Random.Range(minSpawnArea.y, maxSpawnArea.y);
+            resource.transform.DOLocalMove(targetloc, 0.5f).SetEase(Ease.InSine);
+
+            currentTime = Random.Range(minTime, maxTime);
+            resource.GetComponent<ResourceBehaviour>().onconsume += () =>
             {
-                GameObject resource = Instantiate(resources[i]);
-                resource.transform.position = transform.position;
+                --currentResources;
+            };
 
-                Vector3 targetloc = resourceTargetPosition.position;
-                targetloc.x += Random.Range(minSpawnArea.x, maxSpawnArea.x);
-                targetloc.z += Random.Range(minSpawnArea.y, maxSpawnArea.y);
-                resource.transform.DOLocalMove(targetloc, 0.5f).SetEase(Ease.InSine);
-
-                currentTime = Random.Range(minTime, maxTime);
-                resource.GetComponent<ResourceBehaviour>().onconsume += () =>
-                {
-                    --currentResources;
-                };
-
-                ++currentResources;
-            }
+            ++currentResources;
         }
     }
 
