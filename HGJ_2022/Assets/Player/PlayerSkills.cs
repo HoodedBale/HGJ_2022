@@ -42,7 +42,7 @@ public class PlayerSkills : MonoBehaviour
     void Dash()
     {
         dashTimer -= Time.deltaTime;
-        dashCDText.text = string.Format("{0}s", (int)dashTimer);
+        dashCDText.text = string.Format("{0}s", (int)dashTimer);    
         if(dashTimer <= 0)
         {
             dashCDText.text = "SPC";

@@ -347,4 +347,5 @@ MonoBehaviour:
   targetTag: Lorry
   combatType: 0
   meleeAtkVFX: {fileID: 0}
+  turningModel: {fileID: 0}
   attackSound: {fileID: 0}

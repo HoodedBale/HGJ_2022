@@ -43,6 +43,8 @@ public class CombatBehaviour : MonoBehaviour
     bool attackanimplayed = false;
     List<GameObject> targets = new List<GameObject>();
 
+    public GameObject turningModel;
+
     [Header("Sound")]
     public AudioClip attackSound;
 
@@ -90,6 +92,15 @@ public class CombatBehaviour : MonoBehaviour
                     projectile.transform.position = transform.position;
                     projectile.GetComponent<ProjectileBehaviour>().target = targets[i];
                     projectile.GetComponent<ProjectileBehaviour>().damage = damage;
+
+                    if(turningModel != null)
+                    {
+                        Vector3 facedir = targets[i].transform.position - transform.position;
+                        Vector3 rot = turningModel.transform.localRotation.eulerAngles;
+                        float turnangle = Mathf.Atan2(facedir.x, facedir.z) * Mathf.Rad2Deg;
+                        rot.y = turnangle;
+                        turningModel.transform.localRotation = Quaternion.Euler(rot);
+                    }
                 }
 
                 while (removequeue.Count > 0)
