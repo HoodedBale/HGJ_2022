@@ -87,13 +87,7 @@ public class CombatBehaviour : MonoBehaviour
                         removequeue.Enqueue(targets[i]);
                         continue;
                     }
-                    ++targetsHit;
-                    GameObject projectile = Instantiate(projectilePrefab);
-                    projectile.transform.position = transform.position;
-                    projectile.GetComponent<ProjectileBehaviour>().target = targets[i];
-                    projectile.GetComponent<ProjectileBehaviour>().damage = damage;
-
-                    if(turningModel != null)
+                    if (turningModel != null)
                     {
                         Vector3 facedir = targets[i].transform.position - transform.position;
                         Vector3 rot = turningModel.transform.localRotation.eulerAngles;
@@ -101,6 +95,13 @@ public class CombatBehaviour : MonoBehaviour
                         rot.y = turnangle;
                         turningModel.transform.localRotation = Quaternion.Euler(rot);
                     }
+
+                    ++targetsHit;
+                    GameObject projectile = Instantiate(projectilePrefab);
+                    projectile.transform.position = transform.position;
+                    projectile.GetComponent<ProjectileBehaviour>().target = targets[i];
+                    projectile.GetComponent<ProjectileBehaviour>().damage = damage;
+
                 }
 
                 while (removequeue.Count > 0)
@@ -135,7 +136,9 @@ public class CombatBehaviour : MonoBehaviour
                     targets.Remove(toremove);
                 }
                 if (targets.Count > 0)
-                    Instantiate(meleeAtkVFX, transform.position, Quaternion.identity);
+                {
+                    GameObject particle = Instantiate(meleeAtkVFX, transform.position, Quaternion.Euler(90, 0, 0));
+                }
                     PlayAttackSound();
             }
         }
