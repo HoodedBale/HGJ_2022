@@ -8,7 +8,7 @@ public class StatsUI : MonoBehaviour
 {
     public Text cardboardTxt, plasticTxt, metalTxt;
     public HealthBehaviour lorryHealth;
-    public RectTransform healthbar;
+    public RectTransform healthbar, healthbarFlash;
     float maxhealthsize;
 
     // Start is called before the first frame update
@@ -31,6 +31,7 @@ public class StatsUI : MonoBehaviour
         Vector2 healthbarsize = healthbar.sizeDelta;
         healthbarsize.x = lorryHealth.currenthealth / (float)lorryHealth.maxhealth * maxhealthsize;
         healthbar.sizeDelta = healthbarsize;
+        healthbarFlash.sizeDelta = healthbarsize;
         //healthbar.DOSizeDelta(healthbarsize, 0.5f).SetEase(Ease.InSine);
     }
 }

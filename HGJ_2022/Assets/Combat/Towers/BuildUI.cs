@@ -75,12 +75,12 @@ public class BuildUI : MonoBehaviour
         if (!towerbase.HasTower())
         {
             //buildOptions.SetActive(true);
-            buildOptions.transform.DOLocalMove(buildTarget.localPosition, 0.1f).SetEase(Ease.InSine);
+            buildOptions.transform.DOLocalMove(buildTarget.localPosition, 0.2f).SetEase(Ease.InSine);
         }
         else
         {
             //upgradeOptions.SetActive(true);
-            upgradeOptions.transform.DOLocalMove(buildTarget.localPosition, 0.1f).SetEase(Ease.InSine);
+            upgradeOptions.transform.DOLocalMove(buildTarget.localPosition, 0.2f).SetEase(Ease.InSine);
         }
 
     }
@@ -95,8 +95,8 @@ public class BuildUI : MonoBehaviour
         //buildPrompt.gameObject.SetActive(false);
         //buildOptions.SetActive(false);
         //upgradeOptions.SetActive(false);
-        buildOptions.transform.DOLocalMove(buildOptionsOrigin, 0.1f).SetEase(Ease.InSine);
-        upgradeOptions.transform.DOLocalMove(upgradeOptionsOrigin, 0.1f).SetEase(Ease.InSine);
+        buildOptions.transform.DOLocalMove(buildOptionsOrigin, 0.2f).SetEase(Ease.InSine);
+        upgradeOptions.transform.DOLocalMove(upgradeOptionsOrigin, 0.2f).SetEase(Ease.InSine);
     }
 
     void ActivateBuildOptions()
