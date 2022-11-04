@@ -30,11 +30,11 @@ public class LoseScreen : MonoBehaviour
 
     public void playAgain()
     {
-
+        SceneManager.LoadScene("Level");
     }
 
     public void returnToMM()
     {
-
+        SceneManager.LoadScene("MainMenu");
     }
 }
