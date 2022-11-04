@@ -8,66 +8,64 @@ public class MonsterSpawner : MonoBehaviour
     public Transform targetWaypoint;
     public Transform targetGoal;
 
-    public float startingWaveTimer; //duration between game start and first wave
-    public float subsequentWaveTimer; //duration between end of any wave and start of subsequent wave
+    public WaveManager waveMgr;
 
-    float waveTimer = 0;
+    public WaveSO[] waveData;
+    public bool spawningWave = false;
 
-    int currentWave = 0;
-    public WaveSystemSO[] waveData;
-
-    bool spawningWave = false;
     bool isWaiting = false;
     int currentSet = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        waveTimer = startingWaveTimer;
+        waveMgr.addSpawner(this);
     }
 
     // Update is called once per frame
     void Update()
     {
-        SpawnMonster();
+        
     }
 
-    IEnumerator spawnDelay()
+    IEnumerator spawnDelay(WaveSO currWave)
     {
-        foreach (WaveSystemSO.SpawnEntry entry in waveData[currentWave - 1].spawnList)
+        Debug.Log("spawnDelay " + gameObject.name);
+        foreach (WaveSO.SpawnEntry entry in currWave.spawnList)
         {
+            
             for (int count = 0; count < entry.monsterCount; count++) //spawn monsters up to monster count in that entry
-            {
-                GameObject monster = Instantiate(entry.monsterSpawned);
-                MonsterBehaviour monsterbehaviour = monster.GetComponentInChildren<MonsterBehaviour>();
-                monsterbehaviour.targettransform = targetWaypoint;
-                monsterbehaviour.combattarget = targetGoal;
-                Vector3 pos = monster.transform.position;
-                pos.x = transform.position.x;
-                pos.z = transform.position.z;
-                monster.transform.position = pos;
-            }
+                {
 
+                    GameObject monster = Instantiate(entry.monsterSpawned);
+                    MonsterBehaviour monsterbehaviour = monster.GetComponentInChildren<MonsterBehaviour>();
+                    monsterbehaviour.targettransform = targetWaypoint;
+                    monsterbehaviour.combattarget = targetGoal;
+                    Vector3 pos = monster.transform.position;
+                    pos.x = transform.position.x;
+                    pos.z = transform.position.z;
+                    monster.transform.position = pos;
+                }
             yield return new WaitForSeconds(entry.nextSpawnDelay);
         }
-
-        spawningWave = false;
+        endSpawning();
     }
 
-    void SpawnMonster()
+    void endSpawning()
     {
-        if(waveTimer > 0 && !spawningWave)
+        Debug.Log("endSpawning " + gameObject.name);
+        spawningWave = false;
+        waveMgr.checkSpawnFinish();
+    }
+
+    public void startWave(int waveNumber)
+    {
+        Debug.Log("startWave " + waveNumber + " " + gameObject.name);
+        if (!spawningWave && waveData[waveNumber] != null)
         {
-            waveTimer -= Time.deltaTime;
-        }
-        else if (!spawningWave)
-        {
-            ++currentWave;
             spawningWave = true;
 
-            StartCoroutine(spawnDelay());
-
-            waveTimer = subsequentWaveTimer;
+            StartCoroutine(spawnDelay(waveData[waveNumber]));
         }
     }
 }
