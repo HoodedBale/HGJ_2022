@@ -366,6 +366,7 @@ MonoBehaviour:
   targetTag: Enemy
   combatType: 0
   meleeAtkVFX: {fileID: 0}
+  turningModel: {fileID: 4637704869420329590}
   attackSound: {fileID: 8300000, guid: a56b9bb7395cfe444aff03d3af992efe, type: 3}
 --- !u!1001 &5520597100291217191
 PrefabInstance:
@@ -456,6 +457,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c1dcb76dbb49364ea370cd143d2427d, type: 3}
+--- !u!1 &4637704869420329590 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9c1dcb76dbb49364ea370cd143d2427d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5520597100291217191}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5410970143412302028 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9c1dcb76dbb49364ea370cd143d2427d,

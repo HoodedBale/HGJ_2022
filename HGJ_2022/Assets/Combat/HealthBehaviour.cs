@@ -15,15 +15,19 @@ public class HealthBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthbarflashColour = healthBarFlash.color;
+        if(healthBarFlash != null)
+            healthbarflashColour = healthBarFlash.color;
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthbarflashColourAlpha -= 0.1f;
-        healthbarflashColour.a = healthbarflashColourAlpha;
-        healthBarFlash.color = healthbarflashColour;
+        if(healthBarFlash != null)
+        {
+            healthbarflashColourAlpha -= 0.1f;
+            healthbarflashColour.a = healthbarflashColourAlpha;
+            healthBarFlash.color = healthbarflashColour;
+        }
     }
 
     public void DamageHealth(int damage = 0)

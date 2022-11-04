@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerSkills : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class PlayerSkills : MonoBehaviour
 
     public GameObject hornEffect;
     public AudioSource hornSound;
+    float hornTimer = 0;
+    public float hornCD = 5;
+
+    public Text hornCDText, dashCDText;
 
     // Start is called before the first frame update
     void Start()
@@ -37,8 +42,10 @@ public class PlayerSkills : MonoBehaviour
     void Dash()
     {
         dashTimer -= Time.deltaTime;
+        dashCDText.text = string.Format("{0}s", (int)dashTimer);    
         if(dashTimer <= 0)
         {
+            dashCDText.text = "SPC";
             if(Input.GetKeyDown(KeyCode.Space))
             {
                 float angle = transform.eulerAngles.y;
@@ -104,13 +111,20 @@ public class PlayerSkills : MonoBehaviour
 
     void HonkHorn()
     {
-        if(Input.GetMouseButtonDown(1))
+        hornTimer -= Time.deltaTime;
+        hornCDText.text = string.Format("{0}s", (int)hornTimer);
+        if(hornTimer <= 0)
         {
-            if(!hornSound.isPlaying)
+            if (Input.GetMouseButtonDown(1))
             {
-                hornSound.Play();
+                if (!hornSound.isPlaying)
+                {
+                    hornSound.Play();
+                }
+                Instantiate(hornEffect, transform);
+                hornTimer = hornCD;
             }
-            Instantiate(hornEffect, transform);
+            hornCDText.text = "RMB";
         }
     }
 }

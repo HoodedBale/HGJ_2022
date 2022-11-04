@@ -27,6 +27,6 @@ public class GameStateMan : MonoBehaviour
     IEnumerator LoseRoutine()
     {
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("LoseScreen");
     }
 }

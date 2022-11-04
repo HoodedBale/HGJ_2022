@@ -45,6 +45,7 @@ public class MonsterSpawner : MonoBehaviour
                     pos.x = transform.position.x;
                     pos.z = transform.position.z;
                     monster.transform.position = pos;
+                yield return new WaitForSeconds(0.75f);
                 }
             yield return new WaitForSeconds(entry.nextSpawnDelay);
         }
