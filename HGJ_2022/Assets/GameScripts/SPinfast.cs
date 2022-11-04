@@ -6,6 +6,9 @@ public class SPinfast : MonoBehaviour
 {
     [SerializeField] private Vector3 Rot;
     [SerializeField] private float speed;
+    public bool bob = false;
+    public AnimationCurve bobCurve;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,5 +19,10 @@ public class SPinfast : MonoBehaviour
     void Update()
     {
         transform.Rotate(Rot * speed * Time.deltaTime);
+
+        if(bob == true)
+        {
+            transform.position = new Vector3(transform.position.x, bobCurve.Evaluate((Time.time % bobCurve.length)), transform.position.z);
+        }
     }
 }
