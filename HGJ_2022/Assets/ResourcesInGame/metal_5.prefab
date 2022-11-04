@@ -188,6 +188,12 @@ PrefabInstance:
       propertyPath: metalmin
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3801657229631625472, guid: 0a47a7371b7646045a4f0e2ceda638a1,
+        type: 3}
+      propertyPath: feedbackFX
+      value: 
+      objectReference: {fileID: 9002414256939072456, guid: 81830cbce8082194ea082ed33b042ce5,
+        type: 3}
     - target: {fileID: 3801657229631625475, guid: 0a47a7371b7646045a4f0e2ceda638a1,
         type: 3}
       propertyPath: m_Name

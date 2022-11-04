@@ -15,12 +15,16 @@ public class ResourceBehaviour : MonoBehaviour
 
     public AudioClip[] pickupSound;
 
+    public GameObject feedbackFX, feedbackFXSpawner;
+
     // Start is called before the first frame update
     void Start()
     {
         cardboard = Random.Range(cardboardmin, cardboardmax + 1);
         plastic = Random.Range(plasticmin, plasticmax + 1);
         metal = Random.Range(metalmin, metalmax + 1);
+
+        feedbackFXSpawner = GameObject.Find("PickupFeedback");
     }
 
     // Update is called once per frame
@@ -52,6 +56,8 @@ public class ResourceBehaviour : MonoBehaviour
             GameStats.resources[(int)GameStats.RESOURCE_TYPE.METAL] += metal;
             PlayPickupAudio();
             //CitizenVoices.current.PlayCitizenVoice();
+
+            Instantiate(feedbackFX, feedbackFXSpawner.transform);
 
             if (onconsume != null)
             {

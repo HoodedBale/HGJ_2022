@@ -180,6 +180,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1176815182474682331, guid: 0a3731d5d3d190e4b87b95cb8b7c59f0,
         type: 3}
+      propertyPath: feedbackFX
+      value: 
+      objectReference: {fileID: 8454731066266285978, guid: 79ed4343bdeb36f4c8c4e40bc40b69ba,
+        type: 3}
+    - target: {fileID: 1176815182474682331, guid: 0a3731d5d3d190e4b87b95cb8b7c59f0,
+        type: 3}
       propertyPath: plasticmax
       value: 2
       objectReference: {fileID: 0}

@@ -255,6 +255,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8940265303539510404, guid: 081851ce175b7ca4a826871401ec21c1,
         type: 3}
+      propertyPath: feedbackFX
+      value: 
+      objectReference: {fileID: 8215833821626526083, guid: ecd99f59a1a663845b983b75d531ab42,
+        type: 3}
+    - target: {fileID: 8940265303539510404, guid: 081851ce175b7ca4a826871401ec21c1,
+        type: 3}
       propertyPath: cardboardmax
       value: 9
       objectReference: {fileID: 0}
@@ -262,6 +268,11 @@ PrefabInstance:
         type: 3}
       propertyPath: cardboardmin
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940265303539510404, guid: 081851ce175b7ca4a826871401ec21c1,
+        type: 3}
+      propertyPath: feedbackFXSpawner
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8940265303539510407, guid: 081851ce175b7ca4a826871401ec21c1,
         type: 3}
