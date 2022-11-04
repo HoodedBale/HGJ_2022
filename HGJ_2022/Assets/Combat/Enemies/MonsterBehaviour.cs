@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MonsterBehaviour : MonoBehaviour
 {
@@ -20,11 +21,12 @@ public class MonsterBehaviour : MonoBehaviour
     public float engagerange = 5;
     
     float turndamper = 0;
+    NavMeshAgent agent;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -60,13 +62,14 @@ public class MonsterBehaviour : MonoBehaviour
             return;
         }
 
-        Vector3 targetposition = targettransform.position;
-        Vector3 direction = targetposition - transform.position;
-        direction.Normalize();
-        GetComponent<Rigidbody>().velocity = direction * movementspeed;
-
-        float targetangle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-        float angle = Mathf.SmoothDampAngle(transform.rotation.eulerAngles.y, targetangle, ref turndamper, turntime);
-        transform.rotation = Quaternion.Euler(0, angle, 0);
+        agent.SetDestination(targettransform.position);
+        //Vector3 targetposition = targettransform.position;
+        //Vector3 direction = targetposition - transform.position;
+        //direction.Normalize();
+        //GetComponent<Rigidbody>().velocity = direction * movementspeed;
+        //
+        //float targetangle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+        //float angle = Mathf.SmoothDampAngle(transform.rotation.eulerAngles.y, targetangle, ref turndamper, turntime);
+        //transform.rotation = Quaternion.Euler(0, angle, 0);
     }
 }
