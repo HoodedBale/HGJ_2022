@@ -155,6 +155,7 @@ MonoBehaviour:
   combatType: 1
   meleeAtkVFX: {fileID: 4486139596509043785, guid: 6f188aebaa70ce24aaf4e6dd2a425bbb,
     type: 3}
+  turningModel: {fileID: 0}
   attackSound: {fileID: 0}
 --- !u!1 &6630045987915075263
 GameObject:
@@ -472,6 +473,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rot: {x: 0, y: 0, z: 2}
   speed: 200
+  bob: 0
+  bobCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &6811744314323261463 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c028cfbecded1954aaa242ae743de174,
@@ -555,6 +563,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9de9808ec14494b49b0fb0bca55a2735,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08d1e06578db0564783354d3ce9cb71a, type: 2}
     - target: {fileID: 919132149155446097, guid: 9de9808ec14494b49b0fb0bca55a2735,
         type: 3}
       propertyPath: m_Name
