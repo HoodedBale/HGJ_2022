@@ -52,10 +52,6 @@ public class CombatBehaviour : MonoBehaviour
     void Start()
     {
         LevelUp(0);
-        if (GetComponent<CapsuleCollider>() != null)
-            GetComponent<CapsuleCollider>().radius = attackrange;
-        if (GetComponent<SphereCollider>() != null)
-            GetComponent<SphereCollider>().radius = attackrange;
     }
 
     // Update is called once per frame
@@ -161,6 +157,11 @@ public class CombatBehaviour : MonoBehaviour
         damage = statTree[level].damage;
         targetcount = statTree[level].targetcount;
         attackcooldown = 1 / statTree[level].attacksPerSec;
+
+        if (GetComponent<CapsuleCollider>() != null)
+            GetComponent<CapsuleCollider>().radius = attackrange;
+        if (GetComponent<SphereCollider>() != null)
+            GetComponent<SphereCollider>().radius = attackrange;
     }
 
     private void OnTriggerEnter(Collider other)
