@@ -49,6 +49,7 @@ public class ResourceBehaviour : MonoBehaviour
             {
                 return;
             }
+            CitizenVoices.current.PlayCitizenVoice(transform.position);
 
             Destroy(gameObject);
             GameStats.resources[(int)GameStats.RESOURCE_TYPE.CARDBOARD] += cardboard;
@@ -63,6 +64,7 @@ public class ResourceBehaviour : MonoBehaviour
             {
                 onconsume();
             }
+
         }
     }
 
