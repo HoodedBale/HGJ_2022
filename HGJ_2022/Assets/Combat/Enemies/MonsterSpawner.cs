@@ -43,6 +43,7 @@ public class MonsterSpawner : MonoBehaviour
                     monsterbehaviour.combattarget = targetGoal;
                     Vector3 pos = monster.transform.position;
                     pos.x = transform.position.x;
+                    //pos.y = transform.position.y;
                     pos.z = transform.position.z;
                     monster.transform.position = pos;
                 yield return new WaitForSeconds(0.75f);

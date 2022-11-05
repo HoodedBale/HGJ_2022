@@ -23,10 +23,19 @@ public class MonsterBehaviour : MonoBehaviour
     float turndamper = 0;
     NavMeshAgent agent;
 
+    private void Awake()
+    {
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        Vector3 localpos = transform.localPosition;
+        localpos.x = 0;
+        localpos.z = 0;
+        transform.localPosition = localpos;
         agent = GetComponent<NavMeshAgent>();
+        agent.Warp(transform.position);
     }
 
     // Update is called once per frame
@@ -34,6 +43,7 @@ public class MonsterBehaviour : MonoBehaviour
     {
         if(currentstate == STATE.PATROLLING)
         {
+            agent.updatePosition = true;
             Patrolling();
         }
 
