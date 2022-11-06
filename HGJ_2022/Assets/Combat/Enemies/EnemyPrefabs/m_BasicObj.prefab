@@ -349,6 +349,7 @@ MonoBehaviour:
   combatType: 0
   meleeAtkVFX: {fileID: 0}
   turningModel: {fileID: 0}
+  levelupModels: []
   attackSound: {fileID: 0}
 --- !u!1001 &2065076744232772906
 PrefabInstance:
@@ -417,6 +418,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Char_Trashcan
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 3f78631cfe7f76c4aa86faa2e07d053a,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 88b6f6a6e0603c441b266a4da06ea785, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f78631cfe7f76c4aa86faa2e07d053a, type: 3}
 --- !u!4 &1955152843314250433 stripped

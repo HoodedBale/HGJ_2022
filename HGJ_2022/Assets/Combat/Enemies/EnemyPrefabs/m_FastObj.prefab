@@ -132,6 +132,7 @@ MonoBehaviour:
   combatType: 0
   meleeAtkVFX: {fileID: 0}
   turningModel: {fileID: 0}
+  levelupModels: []
   attackSound: {fileID: 0}
 --- !u!1 &2499805776783228762
 GameObject:
@@ -417,6 +418,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Char_Roach
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: cd4d3608c7a15834484a10d9b01b83f3,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 506bd4bb7b4eee54ea657c325c334318, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4d3608c7a15834484a10d9b01b83f3, type: 3}
 --- !u!4 &2696311858610085340 stripped

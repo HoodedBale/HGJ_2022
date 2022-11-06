@@ -132,6 +132,7 @@ MonoBehaviour:
   combatType: 0
   meleeAtkVFX: {fileID: 0}
   turningModel: {fileID: 0}
+  levelupModels: []
   attackSound: {fileID: 0}
 --- !u!1 &3541799279906700302
 GameObject:
@@ -417,6 +418,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Char_Slime
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 3c946e452a0bc724e9869e431f6e888b,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 14e9d5c0e56d9f045ad28edb760f6275, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c946e452a0bc724e9869e431f6e888b, type: 3}
 --- !u!4 &7712492405451758765 stripped
