@@ -1187,6 +1187,7 @@ MonoBehaviour:
   PlayBtn: {fileID: 120934930}
   OptionsBtn: {fileID: 924556930}
   Creditsbtn: {fileID: 899597571}
+  playSound: {fileID: 8300000, guid: 0dceac7e43db0c0439360c880450b921, type: 3}
   MainCamera: {fileID: 963194225}
 --- !u!1001 &253984810
 PrefabInstance:

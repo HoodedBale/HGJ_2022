@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public Button PlayBtn, OptionsBtn, Creditsbtn;
+    public AudioClip playSound;
     public GameObject MainCamera;
     bool inOptions = false;
     bool inCredits = false;
@@ -46,7 +47,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Level");
+        StartCoroutine(holdBeforeStart(1f));
     }
 
     public void OpenOptions()
@@ -111,5 +112,13 @@ public class MainMenu : MonoBehaviour
         inCredits = false;
         yield return new WaitForSeconds(1.025f);
         inCredits = true;
+    }
+
+    IEnumerator holdBeforeStart(float val)
+    {
+        UISound.instance.bgmSource.loop = false;
+        UISound.instance.ReplaceBGM(playSound);
+        yield return new WaitForSeconds(val);
+        SceneManager.LoadScene("Level");
     }
 }
