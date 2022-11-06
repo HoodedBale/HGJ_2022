@@ -424,9 +424,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashUpgrade:
-  - damage: 35
+  - damage: 40
     force: 600
-    cooldown: 5
+    cooldown: 4
   - damage: 50
     force: 1000
     cooldown: 4
@@ -434,6 +434,9 @@ MonoBehaviour:
   hornEffect: {fileID: 7290067407446106887, guid: 6d825cebbf64bad4e90d6662dcac0966,
     type: 3}
   hornSound: {fileID: 1675105695}
+  hornCD: 12
+  hornCDText: {fileID: 0}
+  dashCDText: {fileID: 0}
 --- !u!1 &8782692519682713900
 GameObject:
   m_ObjectHideFlags: 0
