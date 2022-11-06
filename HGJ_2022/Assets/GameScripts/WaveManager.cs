@@ -18,7 +18,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField]
     bool waveActive = false;
 
-    public
+    public Text waveNumber, waveCountDown;
 
     // Start is called before the first frame update
     void Start()
@@ -32,12 +32,15 @@ public class WaveManager : MonoBehaviour
         if (currWaveTimer > 0 && !waveActive)
         {
             currWaveTimer -= Time.deltaTime;
+            waveCountDown.text = string.Format("00:{0}", ((int)currWaveTimer).ToString("D2"));
         }
 
         else if (currWaveTimer <= 0 && !waveActive)
         {
             startWave();
         }
+
+        waveNumber.text = currentWaveMaster.ToString();
     }
 
     public void addSpawner(MonsterSpawner spawner)
