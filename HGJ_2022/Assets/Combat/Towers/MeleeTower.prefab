@@ -115,7 +115,7 @@ MonoBehaviour:
   - damage: 50
     attacksPerSec: 0.5
     attackAnimDelay: 0
-    range: 12
+    range: 10
     targetcount: 1
     cardboardCost: 0
     plasticCost: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   - damage: 70
     attacksPerSec: 0.6
     attackAnimDelay: 0
-    range: 12
+    range: 10
     targetcount: 1
     cardboardCost: 16
     plasticCost: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   - damage: 90
     attacksPerSec: 0.7
     attackAnimDelay: 0
-    range: 15
+    range: 12
     targetcount: 1
     cardboardCost: 24
     plasticCost: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   - damage: 110
     attacksPerSec: 1
     attackAnimDelay: 0
-    range: 18
+    range: 14
     targetcount: 1
     cardboardCost: 24
     plasticCost: 12
