@@ -44,6 +44,7 @@ public class CombatBehaviour : MonoBehaviour
     List<GameObject> targets = new List<GameObject>();
 
     public GameObject turningModel;
+    public GameObject[] levelupModels;
 
     [Header("Sound")]
     public AudioClip attackSound;
@@ -87,7 +88,7 @@ public class CombatBehaviour : MonoBehaviour
                     {
                         Vector3 facedir = targets[i].transform.position - transform.position;
                         Vector3 rot = turningModel.transform.localRotation.eulerAngles;
-                        float turnangle = Mathf.Atan2(facedir.x, facedir.z) * Mathf.Rad2Deg;
+                        float turnangle = -Mathf.Atan2(facedir.z, facedir.x) * Mathf.Rad2Deg;
                         rot.y = turnangle;
                         turningModel.transform.localRotation = Quaternion.Euler(rot);
                     }
@@ -162,6 +163,11 @@ public class CombatBehaviour : MonoBehaviour
             GetComponent<CapsuleCollider>().radius = attackrange;
         if (GetComponent<SphereCollider>() != null)
             GetComponent<SphereCollider>().radius = attackrange;
+
+        for(int i = 0; i < levelupModels.Length; ++i)
+        {
+            levelupModels[i].SetActive(i == level);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
