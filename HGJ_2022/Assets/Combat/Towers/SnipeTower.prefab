@@ -375,7 +375,7 @@ MonoBehaviour:
     cardboardCost: 15
     plasticCost: 0
     metalCost: 0
-  - damage: 40
+  - damage: 42
     attacksPerSec: 2
     attackAnimDelay: 0
     range: 35
@@ -388,7 +388,7 @@ MonoBehaviour:
     attackAnimDelay: 0
     range: 42
     targetcount: 1
-    cardboardCost: 20
+    cardboardCost: 24
     plasticCost: 20
     metalCost: 10
   attackrange: 0
