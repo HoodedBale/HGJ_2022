@@ -15,7 +15,6 @@ public class MovementScript : MonoBehaviour
     public bool disablemovement = false;
 
     public AudioSource footsteps;
-    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -66,8 +65,6 @@ public class MovementScript : MonoBehaviour
                 footsteps.Pause();
             }
         }
-
-        animator.SetBool("running", movementaxis.sqrMagnitude > 0);
 
         movementaxis.Normalize();
         GetComponent<Rigidbody>().velocity = movementaxis * speedUpgrade[speedLevel];

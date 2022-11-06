@@ -16,30 +16,30 @@ MonoBehaviour:
   - items:
     - {fileID: 7777829218956904824, guid: 529edf49c44d8d7419e12cac134e2891, type: 3}
     item: {fileID: 8953669132332826422, guid: 999b8b6a36956d04598fff82df6df6e6, type: 3}
-    chance: 30
+    chance: 18
   - items:
     - {fileID: 2149653901823267081, guid: fa1de9239278d6d4d9e5c6e383ff50f3, type: 3}
     - {fileID: 8716565917147669893, guid: 4c7fb19250a24894184614079aaa483c, type: 3}
     item: {fileID: 7161283238661660698, guid: 30e2a9e43f072c14cb2675d6e8faa314, type: 3}
-    chance: 20
+    chance: 18
   - items:
     - {fileID: 7580324028301932549, guid: 002511c8ec3852143894021a1621d18d, type: 3}
     item: {fileID: 7730595344610679853, guid: 66efb4aa0f5081e408b65127c467183b, type: 3}
-    chance: 20
+    chance: 18
   - items:
     - {fileID: 4453755137386934580, guid: fcebc81fdd27bd6469e396ed82413c60, type: 3}
     item: {fileID: 2693424146316376902, guid: 88979f51d098a0143bc0cc2b5fba81df, type: 3}
-    chance: 10
+    chance: 18
   - items:
     - {fileID: 1909175262007468623, guid: 5fba276963ab7494ba65345880a70783, type: 3}
     - {fileID: 6919492238944253228, guid: a6720b02244028e4fb0b7fa2c79ea9b6, type: 3}
     item: {fileID: 1296101593598007276, guid: f63ce21a825302c4a9b7f27893836e01, type: 3}
-    chance: 5
+    chance: 8
   - items:
     - {fileID: 2717726848665983032, guid: 803ebeb6ed7ba714392d8413a8f92d14, type: 3}
     - {fileID: 6919492238944253228, guid: a6720b02244028e4fb0b7fa2c79ea9b6, type: 3}
     item: {fileID: 1313052034685487874, guid: e212cb49fd70f6b4094b734a1d407c48, type: 3}
-    chance: 5
+    chance: 7
   - items:
     - {fileID: 2717726848665983032, guid: 803ebeb6ed7ba714392d8413a8f92d14, type: 3}
     - {fileID: 8716565917147669893, guid: 4c7fb19250a24894184614079aaa483c, type: 3}
@@ -49,4 +49,4 @@ MonoBehaviour:
     - {fileID: 1909175262007468623, guid: 5fba276963ab7494ba65345880a70783, type: 3}
     - {fileID: 1189151009300161095, guid: 55864a43737847f44b3489c1187c0ed1, type: 3}
     item: {fileID: 8157939478526817267, guid: eb78b43926a7d554b868ff5cec1797c0, type: 3}
-    chance: 5
+    chance: 13
