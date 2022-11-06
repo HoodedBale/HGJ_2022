@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 8782692519352367201}
   - component: {fileID: 8782692519352367200}
   - component: {fileID: 8782692519108094940}
+  - component: {fileID: 6589631809259374932}
   m_Layer: 0
   m_Name: GarangGuni
   m_TagString: Player
@@ -411,7 +412,8 @@ MonoBehaviour:
   movementspeed: 10
   turntime: 0.1
   disablemovement: 0
-  footsteps: {fileID: 0}
+  footsteps: {fileID: 6589631809259374932}
+  animator: {fileID: 4696064344006585256}
 --- !u!114 &8782692519108094940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,6 +440,102 @@ MonoBehaviour:
   hornCD: 12
   hornCDText: {fileID: 0}
   dashCDText: {fileID: 0}
+--- !u!82 &6589631809259374932
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8782692519352367215}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5a01ad953cea08f4aab6e47cbb886b52, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8782692519682713900
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,6 +715,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Char_KarungGuni
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 17b023a5404f87b43a65f2022df53963,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17b023a5404f87b43a65f2022df53963, type: 3}
 --- !u!4 &543450652870581651 stripped
@@ -665,7 +768,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 31c46079aadcbb44fa23070acb659ed8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.5
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31c46079aadcbb44fa23070acb659ed8,
         type: 3}
@@ -729,13 +832,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 602d6fd7757b2ea4093740a9ecbf9ba2,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 602d6fd7757b2ea4093740a9ecbf9ba2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 602d6fd7757b2ea4093740a9ecbf9ba2,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 602d6fd7757b2ea4093740a9ecbf9ba2,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 602d6fd7757b2ea4093740a9ecbf9ba2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 602d6fd7757b2ea4093740a9ecbf9ba2,
         type: 3}
@@ -792,6 +910,12 @@ PrefabInstance:
 --- !u!4 &1714720782059188690 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 602d6fd7757b2ea4093740a9ecbf9ba2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1171305382528898617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4696064344006585256 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 602d6fd7757b2ea4093740a9ecbf9ba2,
     type: 3}
   m_PrefabInstance: {fileID: 1171305382528898617}
   m_PrefabAsset: {fileID: 0}
