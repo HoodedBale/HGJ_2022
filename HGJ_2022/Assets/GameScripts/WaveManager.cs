@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.UI;
 
 public class WaveManager : MonoBehaviour
 {
@@ -12,8 +13,12 @@ public class WaveManager : MonoBehaviour
     public List<MonsterSpawner> spawnerList;
 
     public int currentWaveMaster = 0;
+    public int maxWave = 5;
+
     [SerializeField]
     bool waveActive = false;
+
+    public
 
     // Start is called before the first frame update
     void Start()
