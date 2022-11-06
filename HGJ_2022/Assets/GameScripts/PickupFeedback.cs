@@ -17,7 +17,7 @@ public class PickupFeedback : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.DOLocalMove(goTo, 0.075f).SetEase(Ease.InSine);
+        transform.DOLocalMove(goTo, 0.05f).SetEase(Ease.InSine);
     }
 
     IEnumerator deleteSelf()
