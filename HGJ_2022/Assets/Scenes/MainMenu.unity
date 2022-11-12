@@ -1364,6 +1364,7 @@ GameObject:
   - component: {fileID: 251750505}
   - component: {fileID: 251750504}
   - component: {fileID: 251750507}
+  - component: {fileID: 251750508}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1438,6 +1439,28 @@ MonoBehaviour:
   Creditsbtn: {fileID: 899597571}
   playSound: {fileID: 8300000, guid: 0dceac7e43db0c0439360c880450b921, type: 3}
   MainCamera: {fileID: 963194225}
+--- !u!114 &251750508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251750503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0241ec1124976394594eda540ba3b14c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmVol: 0
+  sfxVol: 0
+  bgmS: {fileID: 829194266}
+  sfxS: {fileID: 1771089786}
+  bgmM: {fileID: 333516276}
+  sfxM: {fileID: 572387144}
+  bgmT: {fileID: 1321299168}
+  sfxT: {fileID: 514256570}
+  currentBGMVol: 0
+  currentSFXVol: 0
 --- !u!1001 &253984810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1774,7 +1797,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 251750508}
+        m_TargetAssemblyTypeName: Options, Assembly-CSharp
+        m_MethodName: toggleMuteBGM
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1001 &393308660
 PrefabInstance:
@@ -2498,7 +2533,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 251750508}
+        m_TargetAssemblyTypeName: Options, Assembly-CSharp
+        m_MethodName: toggleMuteSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1001 &585220656
 PrefabInstance:
@@ -3564,9 +3611,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1690953773}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 1
+  m_MaxValue: 100
+  m_WholeNumbers: 1
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7169,9 +7216,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 396654368}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 1
+  m_MaxValue: 100
+  m_WholeNumbers: 1
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
