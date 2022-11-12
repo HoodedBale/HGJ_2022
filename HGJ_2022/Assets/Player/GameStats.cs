@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameStats
 {
+    public static float BGM_VOLUME = 1;
+    public static float SFX_VOLUME = 1;
     public enum RESOURCE_TYPE
     {
         CARDBOARD,

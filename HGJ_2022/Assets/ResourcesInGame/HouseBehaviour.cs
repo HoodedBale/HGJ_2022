@@ -17,6 +17,7 @@ public class HouseBehaviour : MonoBehaviour
     public Transform resourceTargetPosition;
 
     public AudioClip[] spawnSound;
+    bool firstdoor = true;
 
     // Start is called before the first frame update
     void Start()
@@ -88,6 +89,11 @@ public class HouseBehaviour : MonoBehaviour
 
     void OpenDoor()
     {
+        if(firstdoor)
+        {
+            firstdoor = false;
+            return;
+        }
         bool playsound = Random.Range(0, 100) < 20;
         int id = Random.Range(0, spawnSound.Length);
         SoundManager.current.PlaySound(spawnSound[id], transform);
