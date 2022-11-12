@@ -13,15 +13,19 @@ MonoBehaviour:
   m_Name: A3
   m_EditorClassIdentifier: 
   spawnList:
+  - monsterSpawned: {fileID: 6816059312850126142, guid: 340fa8bf0147f7647b45a8301257be59,
+      type: 3}
+    monsterCount: 5
+    nextSpawnDelay: 6
   - monsterSpawned: {fileID: 1430599696796415819, guid: e8b3fcd05a6192647b77a8013d7ce60d,
       type: 3}
-    monsterCount: 4
-    nextSpawnDelay: 5
-  - monsterSpawned: {fileID: 1430599696796415819, guid: e8b3fcd05a6192647b77a8013d7ce60d,
-      type: 3}
-    monsterCount: 7
+    monsterCount: 9
     nextSpawnDelay: 8
   - monsterSpawned: {fileID: 6816059312850126142, guid: 340fa8bf0147f7647b45a8301257be59,
       type: 3}
-    monsterCount: 4
+    monsterCount: 6
+    nextSpawnDelay: 6
+  - monsterSpawned: {fileID: 2499805776783228762, guid: bd05311f203c3744da2dde072ae9fb68,
+      type: 3}
+    monsterCount: 6
     nextSpawnDelay: 0

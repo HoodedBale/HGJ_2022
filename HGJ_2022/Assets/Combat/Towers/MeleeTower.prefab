@@ -143,7 +143,7 @@ MonoBehaviour:
     targetcount: 1
     cardboardCost: 24
     plasticCost: 12
-    metalCost: 35
+    metalCost: 32
   attackrange: 0
   attackanimdelay: 0
   attackcooldown: 0

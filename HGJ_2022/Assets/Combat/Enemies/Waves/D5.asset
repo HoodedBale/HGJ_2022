@@ -13,23 +13,19 @@ MonoBehaviour:
   m_Name: D5
   m_EditorClassIdentifier: 
   spawnList:
-  - monsterSpawned: {fileID: 6816059312850126142, guid: 340fa8bf0147f7647b45a8301257be59,
-      type: 3}
-    monsterCount: 8
-    nextSpawnDelay: 6
-  - monsterSpawned: {fileID: 6816059312850126142, guid: 340fa8bf0147f7647b45a8301257be59,
-      type: 3}
-    monsterCount: 4
-    nextSpawnDelay: 4
-  - monsterSpawned: {fileID: 2499805776783228762, guid: bd05311f203c3744da2dde072ae9fb68,
-      type: 3}
-    monsterCount: 12
-    nextSpawnDelay: 6
   - monsterSpawned: {fileID: 1430599696796415819, guid: e8b3fcd05a6192647b77a8013d7ce60d,
       type: 3}
     monsterCount: 16
-    nextSpawnDelay: 4
-  - monsterSpawned: {fileID: 6816059312850126142, guid: 340fa8bf0147f7647b45a8301257be59,
+    nextSpawnDelay: 12
+  - monsterSpawned: {fileID: 1430599696796415819, guid: 750e04be78c25b14a8cc888af7eff916,
+      type: 3}
+    monsterCount: 10
+    nextSpawnDelay: 8
+  - monsterSpawned: {fileID: 2499805776783228762, guid: a67944e339bb95f4da626c70fb1e9396,
       type: 3}
     monsterCount: 8
+    nextSpawnDelay: 6
+  - monsterSpawned: {fileID: 6816059312850126142, guid: 340fa8bf0147f7647b45a8301257be59,
+      type: 3}
+    monsterCount: 10
     nextSpawnDelay: 0

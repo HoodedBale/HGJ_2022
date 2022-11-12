@@ -172,12 +172,12 @@ PrefabInstance:
     - target: {fileID: 8940265303539510404, guid: 081851ce175b7ca4a826871401ec21c1,
         type: 3}
       propertyPath: cardboardmax
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8940265303539510404, guid: 081851ce175b7ca4a826871401ec21c1,
         type: 3}
       propertyPath: cardboardmin
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8940265303539510404, guid: 081851ce175b7ca4a826871401ec21c1,
         type: 3}
@@ -187,7 +187,7 @@ PrefabInstance:
     - target: {fileID: 8940265303539510407, guid: 081851ce175b7ca4a826871401ec21c1,
         type: 3}
       propertyPath: m_Name
-      value: cardboard_5_6
+      value: cardboard_med
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8940265303539510405, guid: 081851ce175b7ca4a826871401ec21c1, type: 3}
