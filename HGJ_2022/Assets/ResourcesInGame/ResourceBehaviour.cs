@@ -43,13 +43,15 @@ public class ResourceBehaviour : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            if(GameStats.ResourceFull(GameStats.RESOURCE_TYPE.CARDBOARD, cardboard) ||
+            CitizenVoices.current.PlayCitizenVoice(transform.position);
+
+            if (GameStats.ResourceFull(GameStats.RESOURCE_TYPE.CARDBOARD, cardboard) ||
                 GameStats.ResourceFull(GameStats.RESOURCE_TYPE.PLASTIC, plastic) ||
                 GameStats.ResourceFull(GameStats.RESOURCE_TYPE.METAL, metal))
             {
+                Destroy(gameObject);
                 return;
             }
-            CitizenVoices.current.PlayCitizenVoice(transform.position);
 
             Destroy(gameObject);
             GameStats.resources[(int)GameStats.RESOURCE_TYPE.CARDBOARD] += cardboard;
