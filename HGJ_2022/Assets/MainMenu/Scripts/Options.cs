@@ -17,7 +17,8 @@ public class Options : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        bgmS.value = GameStats.BGM_VOLUME * 100.0f;
+        sfxS.value = GameStats.SFX_VOLUME * 100.0f;
     }
 
     // Update is called once per frame
@@ -30,6 +31,18 @@ public class Options : MonoBehaviour
         // volumes
         bgmVol = bgmS.value;
         sfxVol = sfxS.value;
+
+        if(bgmS.value > 0 && bgmM.isOn)
+        {
+            bgmM.isOn = false;
+        }
+        if (sfxS.value > 0 && sfxM.isOn)
+        {
+            sfxM.isOn = false;
+        }
+
+        GameStats.BGM_VOLUME = bgmVol / 100.0f;
+        GameStats.SFX_VOLUME = sfxVol / 100.0f;
     }
 
     public void toggleMuteBGM()

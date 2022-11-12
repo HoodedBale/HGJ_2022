@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 95
+  controlID: 132
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 96
+  controlID: 133
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 97
+  controlID: 134
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -520,7 +520,7 @@ MonoBehaviour:
       containerId: overlay-toolbar__top
       floating: 0
       collapsed: 0
-      displayed: 1
+      displayed: 0
       snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
@@ -680,9 +680,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -60.021774, y: -13.512038, z: 38.07301}
+    m_Target: {x: 33.37452, y: -10.388135, z: 47.280197}
     speed: 2
-    m_Value: {x: -60.021774, y: -13.512038, z: 38.07301}
+    m_Value: {x: 33.37452, y: -10.388135, z: 47.280197}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -729,9 +729,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.19302356, y: -0.19986293, z: 0.040214814, w: 0.9605773}
+    m_Target: {x: 0.12551968, y: 0.30911493, z: -0.040950883, w: 0.94262975}
     speed: 2
-    m_Value: {x: 0.19287613, y: -0.19971028, z: 0.0401841, w: 0.95984364}
+    m_Value: {x: 0.12542345, y: 0.30887794, z: -0.04091949, w: 0.9419071}
   m_Size:
     m_Target: 50.678635
     speed: 2
@@ -792,9 +792,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: ea8f0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 4cdeffff7ae6ffffdafaffff
+      m_ExpandedIDs: 7e3bffffd843ffff2e4effff3064ffff9064ffff6287ffff9eacffff02ebffff02fbffff1090000022920000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -953,22 +953,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Audio/SFX
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Audio/SFX
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\HoodedBale\Games\HGJ_2022\HGJ_2022
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c08f0000
-    m_LastClickedID: 36800
-    m_ExpandedIDs: 00000000ec8d0000ee8d0000f08d0000f28d0000d68f000000ca9a3b
+    scrollPos: {x: 0, y: 111}
+    m_SelectedIDs: 8e8f0000
+    m_LastClickedID: 36750
+    m_ExpandedIDs: 00000000d88d0000da8d0000dc8d0000de8d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -996,7 +996,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ec8d0000ee8d0000f08d0000f28d0000
+    m_ExpandedIDs: 00000000d88d0000da8d0000dc8d0000de8d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1117,7 +1117,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 678
+  m_LastVerticalScrollValue: 1450
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:

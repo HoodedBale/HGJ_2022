@@ -1459,8 +1459,6 @@ MonoBehaviour:
   sfxM: {fileID: 572387144}
   bgmT: {fileID: 1321299168}
   sfxT: {fileID: 514256570}
-  currentBGMVol: 0
-  currentSFXVol: 0
 --- !u!1001 &253984810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4461,6 +4459,7 @@ GameObject:
   - component: {fileID: 963194232}
   - component: {fileID: 963194229}
   - component: {fileID: 963194231}
+  - component: {fileID: 963194234}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4872,6 +4871,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &963194234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b8501f1c7632a849b02895f3074ee1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmsources:
+  - {fileID: 963194229}
+  sfxsources:
+  - {fileID: 963194233}
 --- !u!1 &1021168780
 GameObject:
   m_ObjectHideFlags: 0

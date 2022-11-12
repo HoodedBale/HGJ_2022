@@ -1029,6 +1029,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 124753170}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &124753172 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6589631809259374932, guid: 2a1d6299506ad55469ee69710141bddb,
+    type: 3}
+  m_PrefabInstance: {fileID: 124753170}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &124753173 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1675105695, guid: 2a1d6299506ad55469ee69710141bddb,
+    type: 3}
+  m_PrefabInstance: {fileID: 124753170}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &131844765
 GameObject:
   m_ObjectHideFlags: 0
@@ -67889,6 +67901,7 @@ GameObject:
   - component: {fileID: 1468305515}
   - component: {fileID: 1468305516}
   - component: {fileID: 1468305517}
+  - component: {fileID: 1468305518}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -68139,6 +68152,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startsound: {fileID: 8300000, guid: 0dceac7e43db0c0439360c880450b921, type: 3}
   loopbgm: {fileID: 8300000, guid: 3872ddbd32259d9429dee5677d2d03c7, type: 3}
+--- !u!114 &1468305518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468305510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b8501f1c7632a849b02895f3074ee1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmsources:
+  - {fileID: 1468305516}
+  sfxsources:
+  - {fileID: 124753172}
+  - {fileID: 1024030012}
+  - {fileID: 124753173}
 --- !u!114 &1545056927 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 432207728, guid: 865236c60e3f9674c9d32d784c7b88f4,
